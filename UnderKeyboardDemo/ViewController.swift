@@ -9,22 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-  @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var textView: UITextView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    UnderKeyboard.scrollView(scrollView)
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+    UnderKeyboard.scrollView(textView)
   }
   
   @IBAction func onDoneTapped(sender: AnyObject) {
-    textField.resignFirstResponder()
+    textView.resignFirstResponder()
   }
 }
 
