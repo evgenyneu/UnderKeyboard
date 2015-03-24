@@ -2,9 +2,11 @@
 
 This is a helper function that makes sure scroll view isn't obscured by virtual keyboard.
 
+<img scr='https://raw.githubusercontent.com/exchangegroup/under-keyboard-ios/master/Graphics/under_the_keyboard_ios.png' width='640'>
+
 ## Setup
 
-Copy `UnderKeyboard.swift` into your project.
+Copy [UnderKeyboard.swift](https://raw.githubusercontent.com/exchangegroup/under-keyboard-ios/master/UnderKeyboardDemo/UnderKeyboard.swift) into your project.
 
 ## Usage
 
