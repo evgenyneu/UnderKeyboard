@@ -13,6 +13,7 @@
 		2BF2F1661AC12D6C00C01B7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2F1651AC12D6C00C01B7F /* Images.xcassets */; };
 		2BF2F1691AC12D6C00C01B7F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2F1671AC12D6C00C01B7F /* LaunchScreen.xib */; };
 		2BF2F1751AC12D6C00C01B7F /* UnderKeyboardDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2F1741AC12D6C00C01B7F /* UnderKeyboardDemoTests.swift */; };
+		2BF2F17F1AC12E4800C01B7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2F17E1AC12E4800C01B7F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		2BF2F16E1AC12D6C00C01B7F /* UnderKeyboardDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnderKeyboardDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2F1731AC12D6C00C01B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BF2F1741AC12D6C00C01B7F /* UnderKeyboardDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderKeyboardDemoTests.swift; sourceTree = "<group>"; };
+		2BF2F17E1AC12E4800C01B7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		2BF2F1501AC12D6C00C01B7F = {
 			isa = PBXGroup;
 			children = (
+				2BF2F17E1AC12E4800C01B7F /* Default-568h@2x.png */,
 				2BF2F15B1AC12D6C00C01B7F /* UnderKeyboardDemo */,
 				2BF2F1711AC12D6C00C01B7F /* UnderKeyboardDemoTests */,
 				2BF2F15A1AC12D6C00C01B7F /* Products */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF2F1641AC12D6C00C01B7F /* Main.storyboard in Resources */,
+				2BF2F17F1AC12E4800C01B7F /* Default-568h@2x.png in Resources */,
 				2BF2F1691AC12D6C00C01B7F /* LaunchScreen.xib in Resources */,
 				2BF2F1661AC12D6C00C01B7F /* Images.xcassets in Resources */,
 			);
@@ -343,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UnderKeyboardDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UnderKeyboardDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
