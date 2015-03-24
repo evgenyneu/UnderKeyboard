@@ -14,6 +14,8 @@
 		2BF2F1691AC12D6C00C01B7F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2F1671AC12D6C00C01B7F /* LaunchScreen.xib */; };
 		2BF2F1751AC12D6C00C01B7F /* UnderKeyboardDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2F1741AC12D6C00C01B7F /* UnderKeyboardDemoTests.swift */; };
 		2BF2F17F1AC12E4800C01B7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2F17E1AC12E4800C01B7F /* Default-568h@2x.png */; };
+		2BF2F1821AC12FAD00C01B7F /* wombat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BF2F1811AC12FAD00C01B7F /* wombat.jpg */; };
+		2BF2F1851AC1302B00C01B7F /* UnderKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2F1841AC1302B00C01B7F /* UnderKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		2BF2F1731AC12D6C00C01B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BF2F1741AC12D6C00C01B7F /* UnderKeyboardDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderKeyboardDemoTests.swift; sourceTree = "<group>"; };
 		2BF2F17E1AC12E4800C01B7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2BF2F1811AC12FAD00C01B7F /* wombat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wombat.jpg; sourceTree = "<group>"; };
+		2BF2F1841AC1302B00C01B7F /* UnderKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 		2BF2F15B1AC12D6C00C01B7F /* UnderKeyboardDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2BF2F1831AC1300D00C01B7F /* Lib */,
+				2BF2F1801AC12F9100C01B7F /* Images */,
 				2BF2F15E1AC12D6C00C01B7F /* AppDelegate.swift */,
 				2BF2F1601AC12D6C00C01B7F /* ViewController.swift */,
 				2BF2F1621AC12D6C00C01B7F /* Main.storyboard */,
@@ -113,6 +119,22 @@
 				2BF2F1731AC12D6C00C01B7F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BF2F1801AC12F9100C01B7F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2F1811AC12FAD00C01B7F /* wombat.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2BF2F1831AC1300D00C01B7F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				2BF2F1841AC1302B00C01B7F /* UnderKeyboard.swift */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +221,7 @@
 				2BF2F17F1AC12E4800C01B7F /* Default-568h@2x.png in Resources */,
 				2BF2F1691AC12D6C00C01B7F /* LaunchScreen.xib in Resources */,
 				2BF2F1661AC12D6C00C01B7F /* Images.xcassets in Resources */,
+				2BF2F1821AC12FAD00C01B7F /* wombat.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +241,7 @@
 			files = (
 				2BF2F1611AC12D6C00C01B7F /* ViewController.swift in Sources */,
 				2BF2F15F1AC12D6C00C01B7F /* AppDelegate.swift in Sources */,
+				2BF2F1851AC1302B00C01B7F /* UnderKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

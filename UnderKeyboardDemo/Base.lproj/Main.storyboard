@@ -25,7 +25,18 @@
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-KY-C0D">
                                 <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wombat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="riN-5D-nfS">
+                                        <rect key="frame" x="0.0" y="0.0" width="1280" height="960"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.89707423050000001" blue="0.1886660412" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="riN-5D-nfS" secondAttribute="bottom" id="5EN-wJ-0zh"/>
+                                    <constraint firstItem="riN-5D-nfS" firstAttribute="top" secondItem="vyG-KY-C0D" secondAttribute="top" id="exe-i8-6zb"/>
+                                    <constraint firstItem="riN-5D-nfS" firstAttribute="leading" secondItem="vyG-KY-C0D" secondAttribute="leading" id="gjy-It-Mpq"/>
+                                    <constraint firstAttribute="trailing" secondItem="riN-5D-nfS" secondAttribute="trailing" id="sz0-H6-C8g"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -39,9 +50,15 @@
                             <constraint firstItem="vyG-KY-C0D" firstAttribute="top" secondItem="o8U-JP-Cde" secondAttribute="bottom" constant="10" id="sSK-Cr-J0X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="vyG-KY-C0D" id="5ci-Tk-W4S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="wombat.jpg" width="1280" height="960"/>
+    </resources>
 </document>
