@@ -18,11 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-JP-Cde">
-                                <rect key="frame" x="16" y="40" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-KY-C0D">
                                 <rect key="frame" x="0.0" y="80" width="600" height="520"/>
                                 <subviews>
@@ -38,20 +33,38 @@
                                     <constraint firstAttribute="trailing" secondItem="riN-5D-nfS" secondAttribute="trailing" id="sz0-H6-C8g"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxp-C4-Mq7">
+                                <rect key="frame" x="536" y="40" width="43" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0o1-LH-Mda"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-JP-Cde">
+                                <rect key="frame" x="16" y="40" width="505" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vyG-KY-C0D" secondAttribute="trailing" id="9zD-Wd-Y5e"/>
                             <constraint firstItem="o8U-JP-Cde" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="ES2-FM-mZC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cxp-C4-Mq7" secondAttribute="trailing" constant="5" id="Qie-Tb-xHz"/>
+                            <constraint firstItem="Cxp-C4-Mq7" firstAttribute="leading" secondItem="o8U-JP-Cde" secondAttribute="trailing" constant="15" id="RJs-ze-6OT"/>
+                            <constraint firstItem="o8U-JP-Cde" firstAttribute="centerY" secondItem="Cxp-C4-Mq7" secondAttribute="centerY" constant="-2" id="Yj5-ek-bIX"/>
                             <constraint firstItem="o8U-JP-Cde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e1m-lX-85Q"/>
                             <constraint firstItem="vyG-KY-C0D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fQ8-uA-KAq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="o8U-JP-Cde" secondAttribute="trailing" id="jNu-m5-Mch"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vyG-KY-C0D" secondAttribute="bottom" id="mIi-Ag-RaH"/>
                             <constraint firstItem="vyG-KY-C0D" firstAttribute="top" secondItem="o8U-JP-Cde" secondAttribute="bottom" constant="10" id="sSK-Cr-J0X"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="vyG-KY-C0D" id="5ci-Tk-W4S"/>
+                        <outlet property="textField" destination="o8U-JP-Cde" id="JXr-hV-JYS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

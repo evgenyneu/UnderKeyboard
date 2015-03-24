@@ -13,10 +13,14 @@ let tegUnderKeyboard = UnderKeyboard()
 @objc
 class UnderKeyboard {
   
-  weak var scrollView: UIScrollView?
+  private weak var scrollView: UIScrollView?
   
-  class var shared: UnderKeyboard {
+  private class var shared: UnderKeyboard {
     return tegUnderKeyboard
+  }
+  
+  class func scrollView(scrollView: UIScrollView) {
+    shared.scrollView = scrollView
   }
   
   private init() {
@@ -31,6 +35,10 @@ class UnderKeyboard {
     NSNotificationCenter.defaultCenter().addObserver(self,
       selector: "keyboardDidShow:",
       name: UIKeyboardDidShowNotification, object: nil)
+    
+    NSNotificationCenter.defaultCenter().addObserver(self,
+      selector: "keyboardWillHide:",
+      name: UIKeyboardWillHideNotification, object: nil)
   }
   
   private func unRegisterForKeyboardNotifications() {
@@ -40,7 +48,7 @@ class UnderKeyboard {
   func keyboardDidShow(notification: NSNotification) {
     if let currentUserInfo = notification.userInfo {
       if let value = currentUserInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
-        let height = value.CGRectValue().size.height
+        let height = value.CGRectValue().size.height - tabBarHeigh
         
         let insets =  UIEdgeInsets(
           top: 0,
@@ -52,5 +60,18 @@ class UnderKeyboard {
         scrollView?.scrollIndicatorInsets = insets
       }
     }
+  }
+  
+  func keyboardWillHide(notification: NSNotification) {
+    scrollView?.contentInset = UIEdgeInsetsZero;
+    scrollView?.scrollIndicatorInsets = UIEdgeInsetsZero;
+  }
+  
+  private var tabBarHeigh: CGFloat {
+    if let currentTaBarController = UIApplication.sharedApplication().delegate?.window??.rootViewController as? UITabBarController {
+      return currentTaBarController.tabBar.frame.height
+    }
+    
+    return 0
   }
 }
