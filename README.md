@@ -10,7 +10,7 @@ Copy [UnderKeyboard.swift](https://raw.githubusercontent.com/exchangegroup/under
 
 ## Usage
 
-Call this method before keyboard is shown. It can be done in `viewDidLoad`.
+Call `UnderKeyboard.scrollView` function before keyboard is shown. It can be done in `viewDidLoad`.
 
 
 ```Swift
