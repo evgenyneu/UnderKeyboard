@@ -1,6 +1,6 @@
 ## Move scroll view content from under the keyboard on iOS/Swift
 
-This is a helper function and a demo app that moves scroll view content from under the keyboard on iOS. 
+This is a helper function and a demo app that moves scroll view content from under the keyboard on iOS.
 
 ## What's the problem?
 
@@ -29,3 +29,7 @@ One can also use `UITextView` and `UITableView` objects, as they are subclasses 
 ## Reference
 
 [Managing Keyboard](https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html)
+
+## Project home
+
+https://github.com/exchangegroup/under-keyboard-ios
