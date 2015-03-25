@@ -25,7 +25,7 @@ Call `UnderKeyboard.scrollView` function before keyboard is shown. It can be don
 UnderKeyboard.scrollView(scrollView)
 ```
 
-One can also use `UITextView` and `UITableView` objects, as they are subclasses of `UIScrollView`.
+One can also use `UITextView` and `UITableView` objects or other subclasses of `UIScrollView`.
 
 ## Reference
 
