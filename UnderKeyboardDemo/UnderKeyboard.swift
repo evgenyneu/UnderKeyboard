@@ -38,19 +38,19 @@ class UnderKeyboard {
   }
   
   func keyboardDidShow(notification: NSNotification) {
-    if let currentUserInfo = notification.userInfo {
-      if let value = currentUserInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
-        let height = value.CGRectValue().size.height - tabBarHeigh
-        
-        let insets =  UIEdgeInsets(
-          top: 0,
-          left: 0,
-          bottom: height,
-          right: 0)
-        
-        scrollView?.contentInset = insets
-        scrollView?.scrollIndicatorInsets = insets
-      }
+    if let userInfo = notification.userInfo,
+      let value = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
+
+      let height = value.CGRectValue().size.height - tabBarHeigh
+      
+      let insets =  UIEdgeInsets(
+        top: 0,
+        left: 0,
+        bottom: height,
+        right: 0)
+      
+      scrollView?.contentInset = insets
+      scrollView?.scrollIndicatorInsets = insets
     }
   }
   
@@ -60,8 +60,8 @@ class UnderKeyboard {
   }
   
   private var tabBarHeigh: CGFloat {
-    if let currentTaBarController = UIApplication.sharedApplication().delegate?.window??.rootViewController as? UITabBarController {
-      return currentTaBarController.tabBar.frame.height
+    if let tabBarController = UIApplication.sharedApplication().delegate?.window??.rootViewController as? UITabBarController {
+      return tabBarController.tabBar.frame.height
     }
     
     return 0
