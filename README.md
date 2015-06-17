@@ -14,7 +14,7 @@ When virtual keyboard is shown we can adjust the bottom inset of the scroll view
 
 ## Setup
 
-Copy [UnderKeyboard.swift](https://github.com/exchangegroup/under-keyboard-ios/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
+Copy [UnderKeyboard.swift](https://github.com/exchangegroup/UnderKeyboard/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
 
 ## Usage
 
