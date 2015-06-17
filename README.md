@@ -1,5 +1,12 @@
 ## Move scroll view content from under the keyboard on iOS/Swift
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][carthage]
+[![CocoaPods Version](https://img.shields.io/cocoapods/v/UnderKeyboard.svg?style=flat)][cocoadocs]
+[![License](https://img.shields.io/cocoapods/l/UnderKeyboard.svg?style=flat)][cocoadocs]
+[![Platform](https://img.shields.io/cocoapods/p/UnderKeyboard.svg?style=flat)][cocoadocs]
+[cocoadocs]: http://cocoadocs.org/docsets/UnderKeyboard
+[carthage]: https://github.com/Carthage/Carthage
+
 This is a helper function and a demo app that moves scroll view content from under the keyboard on iOS.
 
 ## What's the problem?
