@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BF2F1581AC12D6C00C01B7F"
-               BuildableName = "UnderKeyboardDemo.app"
-               BlueprintName = "UnderKeyboardDemo"
-               ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BF2F16D1AC12D6C00C01B7F"
-               BuildableName = "UnderKeyboardDemoTests.xctest"
-               BlueprintName = "UnderKeyboardDemoTests"
-               ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+               BlueprintIdentifier = "2B8B899C1B313F820080CCE2"
+               BuildableName = "Demo.app"
+               BlueprintName = "Demo"
+               ReferencedContainer = "container:UnderKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BF2F16D1AC12D6C00C01B7F"
-               BuildableName = "UnderKeyboardDemoTests.xctest"
-               BlueprintName = "UnderKeyboardDemoTests"
-               ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+               BlueprintIdentifier = "2B8B89AF1B313F820080CCE2"
+               BuildableName = "DemoTests.xctest"
+               BlueprintName = "DemoTests"
+               ReferencedContainer = "container:UnderKeyboard.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B8CF9551B312642008D5C3F"
-               BuildableName = "UnderKeyboardTests.xctest"
-               BlueprintName = "UnderKeyboardTests"
-               ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+               BlueprintIdentifier = "2B8B89BA1B313F820080CCE2"
+               BuildableName = "DemoUITests.xctest"
+               BlueprintName = "DemoUITests"
+               ReferencedContainer = "container:UnderKeyboard.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BF2F1581AC12D6C00C01B7F"
-            BuildableName = "UnderKeyboardDemo.app"
-            BlueprintName = "UnderKeyboardDemo"
-            ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+            BlueprintIdentifier = "2B8B899C1B313F820080CCE2"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
+            ReferencedContainer = "container:UnderKeyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -89,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BF2F1581AC12D6C00C01B7F"
-            BuildableName = "UnderKeyboardDemo.app"
-            BlueprintName = "UnderKeyboardDemo"
-            ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+            BlueprintIdentifier = "2B8B899C1B313F820080CCE2"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
+            ReferencedContainer = "container:UnderKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -108,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BF2F1581AC12D6C00C01B7F"
-            BuildableName = "UnderKeyboardDemo.app"
-            BlueprintName = "UnderKeyboardDemo"
-            ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+            BlueprintIdentifier = "2B8B899C1B313F820080CCE2"
+            BuildableName = "Demo.app"
+            BlueprintName = "Demo"
+            ReferencedContainer = "container:UnderKeyboard.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

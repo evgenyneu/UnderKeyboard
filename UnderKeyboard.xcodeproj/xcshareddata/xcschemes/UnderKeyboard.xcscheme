@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B8CF94C1B312642008D5C3F"
+               BlueprintIdentifier = "2B8B897B1B313EE10080CCE2"
                BuildableName = "UnderKeyboard.framework"
                BlueprintName = "UnderKeyboard"
-               ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+               ReferencedContainer = "container:UnderKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2B8B897B1B313EE10080CCE2"
+            BuildableName = "UnderKeyboard.framework"
+            BlueprintName = "UnderKeyboard"
+            ReferencedContainer = "container:UnderKeyboard.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +54,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B8CF94C1B312642008D5C3F"
+            BlueprintIdentifier = "2B8B897B1B313EE10080CCE2"
             BuildableName = "UnderKeyboard.framework"
             BlueprintName = "UnderKeyboard"
-            ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+            ReferencedContainer = "container:UnderKeyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +72,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B8CF94C1B312642008D5C3F"
+            BlueprintIdentifier = "2B8B897B1B313EE10080CCE2"
             BuildableName = "UnderKeyboard.framework"
             BlueprintName = "UnderKeyboard"
-            ReferencedContainer = "container:UnderKeyboardDemo.xcodeproj">
+            ReferencedContainer = "container:UnderKeyboard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -9,9 +9,11 @@ class ViewController: UIViewController {
     
     UnderKeyboard.scrollView(textView, bottomLayoutGuide: bottomLayoutGuide)
   }
-  
-  @IBAction func onDoneTapped(sender: AnyObject) {
+
+  @IBAction func onCloseKeyboardTapped(sender: AnyObject) {
     textView.resignFirstResponder()
+
   }
+
 }
 

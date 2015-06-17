@@ -20,7 +20,7 @@ public class UnderKeyboard {
   /**
   
   - parameter scrollView: Supply a scroll view or any of its subclasses. Its bottom inset will be adjusted to the height of the keyboard when it is shown.
-
+  
   - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be used for adjusting  the scroll view insets.
   
   */
@@ -54,18 +54,18 @@ public class UnderKeyboard {
   func keyboardDidShow(notification: NSNotification) {
     if let userInfo = notification.userInfo,
       let value = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
-
-      let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
-      let height = value.CGRectValue().size.height - layoutGuideHeight
-      
-      let insets =  UIEdgeInsets(
-        top: 0,
-        left: 0,
-        bottom: height,
-        right: 0)
-      
-      scrollView?.contentInset = insets
-      scrollView?.scrollIndicatorInsets = insets
+        
+        let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
+        let height = value.CGRectValue().size.height - layoutGuideHeight
+        
+        let insets =  UIEdgeInsets(
+          top: 0,
+          left: 0,
+          bottom: height,
+          right: 0)
+        
+        scrollView?.contentInset = insets
+        scrollView?.scrollIndicatorInsets = insets
     }
   }
   

@@ -4,13 +4,13 @@ import XCTest
 class UnderKeyboardTests: XCTestCase {
   
   var scrollView: UIScrollView!
-    
+  
   override func setUp() {
     super.setUp()
     
     scrollView = UIScrollView()
   }
-    
+  
   func testAddAndRemoveInsetsWhenKeyboardShowsAndHides() {
     UnderKeyboard.scrollView(scrollView)
     

@@ -3,7 +3,7 @@
 //  UnderKeyboard
 //
 //  Created by Evgenii Neumerzhitckii on 17/06/2015.
-//  Copyright © 2015 The Exchange Group Pty Ltd. All rights reserved.
+//  Copyright © 2015 Marketplacer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
