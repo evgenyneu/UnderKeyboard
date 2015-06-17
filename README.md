@@ -41,6 +41,8 @@ Call `UnderKeyboard.scrollView` function before keyboard is shown. It can be don
 UnderKeyboard.scrollView(scrollView)
 ```
 
+**Note**: One can also use `UITextView` and `UITableView` objects or other subclasses of `UIScrollView`.
+
 ### Account for bottom layout guide
 
 If your view controller has a tab bar you can supply its bottom layout guide. Its height will be taken into account during inset calculation.
@@ -49,7 +51,6 @@ If your view controller has a tab bar you can supply its bottom layout guide. It
 UnderKeyboard.scrollView(scrollView, bottomLayoutGuide: bottomLayoutGuide)
 ```
 
-One can also use `UITextView` and `UITableView` objects or other subclasses of `UIScrollView`.
 
 ## Reference
 
