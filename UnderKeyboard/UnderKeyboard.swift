@@ -3,7 +3,7 @@ import UIKit
 let tegUnderKeyboard = UnderKeyboard()
 
 @objc
-class UnderKeyboard {
+public class UnderKeyboard {
   
   private weak var scrollView: UIScrollView?
   
@@ -11,7 +11,7 @@ class UnderKeyboard {
     return tegUnderKeyboard
   }
   
-  class func scrollView(scrollView: UIScrollView) {
+  public class func scrollView(scrollView: UIScrollView) {
     shared.scrollView = scrollView
   }
   
