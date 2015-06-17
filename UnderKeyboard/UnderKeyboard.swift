@@ -11,6 +11,7 @@ Moves scroll view content from under the keyboard on iOS. It adjusts the bottom 
 public class UnderKeyboard {
   
   private weak var scrollView: UIScrollView?
+  private weak var bottomLayoutGuide: UILayoutSupport?
   
   private class var shared: UnderKeyboard {
     return tegUnderKeyboard
@@ -25,6 +26,7 @@ public class UnderKeyboard {
   */
   public class func scrollView(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
     shared.scrollView = scrollView
+    shared.bottomLayoutGuide = bottomLayoutGuide
   }
   
   private init() {
@@ -53,7 +55,8 @@ public class UnderKeyboard {
     if let userInfo = notification.userInfo,
       let value = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
 
-      let height = value.CGRectValue().size.height - tabBarHeigh
+      let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
+      let height = value.CGRectValue().size.height - layoutGuideHeight
       
       let insets =  UIEdgeInsets(
         top: 0,
