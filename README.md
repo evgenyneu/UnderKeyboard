@@ -10,7 +10,7 @@ Suppose we have a scroll view or a text view, or a table view on iOS screen. Tha
 
 When virtual keyboard is shown we can adjust the bottom inset of the scroll view by the height of the keyboard.
 
-<img src="https://raw.githubusercontent.com/exchangegroup/under-keyboard-ios/master/Graphics/under_the_keyboard_ios.png" alt="Move scroll view content from under the keyboard in iOS/Swift" width="640" />
+<img src="https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_the_keyboard_ios.png" alt="Move scroll view content from under the keyboard in iOS/Swift" width="640" />
 
 ## Setup
 
@@ -18,7 +18,7 @@ There are three ways you can add UnderKeyboard to your project.
 
 **Add source (iOS 7+)**
 
-Simply add [UnderKeyboard.swift](https://github.com/exchangegroup/under-keyboard-ios/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
+Simply add [UnderKeyboard.swift](https://github.com/exchangegroup/UnderKeyboard/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
 
 **Setup with Carthage (iOS 8+)**
 
@@ -30,6 +30,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     pod 'UnderKeyboard', '~> 1.0'
+
 
 ## Usage
 
