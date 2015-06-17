@@ -43,7 +43,7 @@ UnderKeyboard.scrollView(scrollView)
 
 ### Account for bottom layout guide
 
-If your view controller has a tab bar you can support its bottom layout guide. Its height will be taken into account during inset calculation.
+If your view controller has a tab bar you can supply its bottom layout guide. Its height will be taken into account during inset calculation.
 
 ```Swift
 UnderKeyboard.scrollView(scrollView, bottomLayoutGuide: bottomLayoutGuide)
