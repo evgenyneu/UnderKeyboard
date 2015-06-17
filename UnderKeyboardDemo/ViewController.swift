@@ -7,7 +7,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    UnderKeyboard.scrollView(textView)
+    UnderKeyboard.scrollView(textView, bottomLayoutGuide: bottomLayoutGuide)
   }
   
   @IBAction func onDoneTapped(sender: AnyObject) {

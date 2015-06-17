@@ -73,12 +73,4 @@ public class UnderKeyboard {
     scrollView?.contentInset = UIEdgeInsetsZero;
     scrollView?.scrollIndicatorInsets = UIEdgeInsetsZero;
   }
-  
-  private var tabBarHeigh: CGFloat {
-    if let tabBarController = UIApplication.sharedApplication().delegate?.window??.rootViewController as? UITabBarController {
-      return tabBarController.tabBar.frame.height
-    }
-    
-    return 0
-  }
 }
