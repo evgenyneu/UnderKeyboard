@@ -14,7 +14,22 @@ When virtual keyboard is shown we can adjust the bottom inset of the scroll view
 
 ## Setup
 
-Copy [UnderKeyboard.swift](https://github.com/exchangegroup/under-keyboard-ios/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
+There are three ways you can add UnderKeyboard to your project.
+
+**Add source (iOS 7+)**
+
+Simply add [UnderKeyboard.swift](https://github.com/exchangegroup/under-keyboard-ios/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
+
+**Setup with Carthage (iOS 8+)**
+
+Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 1.0` to your Cartfile and run `carthage update`.
+
+**Setup with CocoaPods (iOS 8+)**
+
+If you are using CocoaPods add this text to your Podfile and run `pod install`.
+
+    use_frameworks!
+    pod 'UnderKeyboard', '~> 1.0'
 
 ## Usage
 
