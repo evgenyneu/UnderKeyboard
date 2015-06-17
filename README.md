@@ -31,6 +31,6 @@ One can also use `UITextView` and `UITableView` objects or other subclasses of `
 
 [Managing Keyboard](https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html)
 
-## Project home
+## License
 
-https://github.com/exchangegroup/under-keyboard-ios
+Dodo is released under the [MIT License](LICENSE).

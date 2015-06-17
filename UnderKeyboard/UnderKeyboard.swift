@@ -18,9 +18,9 @@ public class UnderKeyboard {
   
   /**
   
-  - parameter scrollView: supply a scroll view or any of its subclasses. Its bottom inset will be adjusted to the height of the keyboard when it is shown.
+  - parameter scrollView: Supply a scroll view or any of its subclasses. Its bottom inset will be adjusted to the height of the keyboard when it is shown.
 
-  - parameter buttonLayoutGuide: supply an optional bottom layout guide (like a tab bar) that will be used for adjusting  the scroll view insets.
+  - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be used for adjusting  the scroll view insets.
   
   */
   public class func scrollView(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
