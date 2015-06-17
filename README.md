@@ -7,7 +7,7 @@
 [cocoadocs]: http://cocoadocs.org/docsets/UnderKeyboard
 [carthage]: https://github.com/Carthage/Carthage
 
-This is a helper function and a demo app that moves scroll view content from under the keyboard on iOS.
+This is a helper function that moves scroll view content from under the keyboard on iOS.
 
 ## What's the problem?
 

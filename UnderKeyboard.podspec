@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name        = "UnderKeyboard"
-  s.version     = "1.0.4"
+  s.version     = "1.0.5"
   s.license     = { :type => "MIT" }
   s.homepage    = "https://github.com/exchangegroup/UnderKeyboard"
   s.summary     = "A helper function for moving scroll view content from under the keyboard written in Swift"
