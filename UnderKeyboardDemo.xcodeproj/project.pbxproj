@@ -170,6 +170,7 @@
 		2BF2F1511AC12D6C00C01B7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "The Exchange Group Pty Ltd";
 				TargetAttributes = {
