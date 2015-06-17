@@ -20,20 +20,6 @@
                ReferencedContainer = "container:UnderKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B8B897B1B313EE10080CCE2"
-               BuildableName = "UnderKeyboard.framework"
-               BlueprintName = "UnderKeyboard"
-               ReferencedContainer = "container:UnderKeyboard.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

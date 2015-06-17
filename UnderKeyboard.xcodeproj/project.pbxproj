@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6F0F1A1B31441700DC6259 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
+		2B6F0F1B1B31441700DC6259 /* UnderKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B8B89871B313EE10080CCE2 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B8B898C1B313EE10080CCE2 /* UnderKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B898B1B313EE10080CCE2 /* UnderKeyboardTests.swift */; };
@@ -20,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2B6F0F1C1B31441700DC6259 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B8B89731B313EE10080CCE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B8B897B1B313EE10080CCE2;
+			remoteInfo = UnderKeyboard;
+		};
 		2B8B89881B313EE10080CCE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2B8B89731B313EE10080CCE2 /* Project object */;
@@ -28,6 +37,20 @@
 			remoteInfo = UnderKeyboard;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2B6F0F1E1B31441700DC6259 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2B6F0F1B1B31441700DC6259 /* UnderKeyboard.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnderKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6F0F1A1B31441700DC6259 /* UnderKeyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +205,12 @@
 				2B8B89991B313F820080CCE2 /* Sources */,
 				2B8B899A1B313F820080CCE2 /* Frameworks */,
 				2B8B899B1B313F820080CCE2 /* Resources */,
+				2B6F0F1E1B31441700DC6259 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2B6F0F1D1B31441700DC6259 /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -289,6 +315,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2B6F0F1D1B31441700DC6259 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B8B897B1B313EE10080CCE2 /* UnderKeyboard */;
+			targetProxy = 2B6F0F1C1B31441700DC6259 /* PBXContainerItemProxy */;
+		};
 		2B8B89891B313EE10080CCE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2B8B897B1B313EE10080CCE2 /* UnderKeyboard */;
@@ -456,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -468,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,6 +528,7 @@
 				2B8B89921B313EE10080CCE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B8B89931B313EE10080CCE2 /* Build configuration list for PBXNativeTarget "UnderKeyboardTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +537,7 @@
 				2B8B89951B313EE10080CCE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B8B89C21B313F820080CCE2 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +546,7 @@
 				2B8B89C41B313F820080CCE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
