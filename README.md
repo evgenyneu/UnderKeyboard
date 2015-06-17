@@ -58,4 +58,4 @@ UnderKeyboard.scrollView(scrollView, bottomLayoutGuide: bottomLayoutGuide)
 
 ## License
 
-Dodo is released under the [MIT License](LICENSE).
+UnderKeyboard is released under the [MIT License](LICENSE).
