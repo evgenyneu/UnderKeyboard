@@ -10,4 +10,8 @@ class ViewController: UIViewController {
   @IBAction func didTapCloseKeyboard(sender: AnyObject) {
     view.endEditing(false)
   }
+  
+  @IBAction func didTapLoginButton(sender: AnyObject) {
+    view.endEditing(false)
+  }
 }
