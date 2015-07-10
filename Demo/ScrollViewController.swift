@@ -10,8 +10,8 @@ class ScrollViewController: UIViewController {
     
     underKeyboardScrollView.setup(textView, bottomLayoutGuide: bottomLayoutGuide)
   }
-
-  @IBAction func onCloseKeyboardTapped(sender: AnyObject) {
+  
+  @IBAction func didTapCloseJKeyboard(sender: AnyObject) {
     textView.resignFirstResponder()
   }
 }

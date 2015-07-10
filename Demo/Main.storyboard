@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fIq-we-Lp6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xfb-B9-0xB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-iG-88K">
-                                <rect key="frame" x="20" y="258" width="560" height="85"/>
+                                <rect key="frame" x="20" y="226" width="560" height="85"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWA-pq-yp5">
                                         <rect key="frame" x="15" y="15" width="530" height="17"/>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.14800996132957994" green="0.024849399818989617" blue="0.16299715909090906" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.23137254901960785" green="0.039215686274509803" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wRB-iG-88K" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="F4o-su-aJ7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wRB-iG-88K" secondAttribute="trailing" id="NiZ-5c-ffT"/>
@@ -63,6 +63,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HLc-WH-sGb">
                         <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="pAe-Im-bjS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="didTapCloseKeyboard:" destination="JGb-BS-J7U" id="HHg-Sy-6nA"/>
                             </connections>
@@ -85,7 +86,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="4XA-LO-3gZ" kind="relationship" relationship="viewControllers" id="6mB-VS-AzS"/>
-                        <segue destination="bMX-L3-lVV" kind="relationship" relationship="viewControllers" id="ZI0-BM-FEf"/>
+                        <segue destination="LTh-xO-3D7" kind="relationship" relationship="viewControllers" id="ZI0-BM-FEf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N87-Yy-xaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,12 +102,12 @@
                         <viewControllerLayoutGuide type="bottom" id="7TR-sD-YER"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fOe-If-0Hk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="sts-RH-0Em">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="sts-RH-0Em">
                                 <rect key="frame" x="20" y="80" width="560" height="461"/>
-                                <color key="backgroundColor" red="0.23862172414790672" green="0.040062213215800266" blue="0.26278409090909094" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.
 
 Native Americans have lived in the Yellowstone region for at least 11,000 years. The region was bypassed during the Lewis and Clark Expedition in the early 19th century. Aside from visits by mountain men during the early-to-mid-19th century, organized exploration did not begin until the late 1860s. The U.S. Army was commissioned to oversee the park just after its establishment. In 1917, administration of the park was transferred to the National Park Service, which had been created the previous year. Hundreds of structures have been built and are protected for their architectural and historical significance, and researchers have examined more than 1,000 archaeological sites.  Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.
@@ -120,36 +121,30 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efm-bh-voV">
-                                <rect key="frame" x="237" y="38" width="126" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Close keyboard">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCloseKeyboardTapped:" destination="bMX-L3-lVV" eventType="touchUpInside" id="eEX-wH-2G1"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.14800996129999999" green="0.02484939982" blue="0.16299715910000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.23137254901960785" green="0.039215686274509803" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sts-RH-0Em" secondAttribute="trailing" id="225-4o-Cf1"/>
                             <constraint firstItem="sts-RH-0Em" firstAttribute="leading" secondItem="fOe-If-0Hk" secondAttribute="leadingMargin" id="2Sd-IJ-ORn"/>
-                            <constraint firstItem="sts-RH-0Em" firstAttribute="top" secondItem="Efm-bh-voV" secondAttribute="bottom" constant="8" id="4h0-Rx-1fd"/>
                             <constraint firstItem="7TR-sD-YER" firstAttribute="top" secondItem="sts-RH-0Em" secondAttribute="bottom" constant="10" id="BqS-8d-Ljz"/>
-                            <constraint firstAttribute="centerX" secondItem="Efm-bh-voV" secondAttribute="centerX" id="JND-HW-6dx"/>
-                            <constraint firstItem="Efm-bh-voV" firstAttribute="top" secondItem="ieS-bT-r2h" secondAttribute="bottom" constant="18" id="WBU-0a-cFK"/>
+                            <constraint firstItem="sts-RH-0Em" firstAttribute="top" secondItem="ieS-bT-r2h" secondAttribute="bottom" constant="16" id="TYJ-8X-10d"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="VoW-XA-e4A"/>
+                    <navigationItem key="navigationItem" id="xgf-2r-tZM">
+                        <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="6ey-3x-ROS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="didTapCloseJKeyboard:" destination="bMX-L3-lVV" id="m0y-Pd-1Z4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="sts-RH-0Em" id="SaH-ke-3Ld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4h-90-S8w" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="190"/>
+            <point key="canvasLocation" x="2098" y="190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="APU-CS-SW6">
@@ -157,9 +152,10 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4XA-LO-3gZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="sCr-9r-JGz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEw-dY-v11">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bEw-dY-v11">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -169,6 +165,26 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cyo-O7-3ND" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1439" y="-498"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gMY-J4-SmU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LTh-xO-3D7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="VoW-XA-e4A"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z7C-ON-NCH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bMX-L3-lVV" kind="relationship" relationship="rootViewController" id="Oem-Qp-R5x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CD-as-KGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="190"/>
         </scene>
     </scenes>
 </document>
