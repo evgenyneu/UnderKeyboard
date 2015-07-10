@@ -13,8 +13,8 @@
 		2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B8B89871B313EE10080CCE2 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B8B898C1B313EE10080CCE2 /* UnderKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B898B1B313EE10080CCE2 /* UnderKeyboardTests.swift */; };
-		2B8B89971B313F330080CCE2 /* UnderKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89961B313F330080CCE2 /* UnderKeyboard.swift */; };
-		2B8B89981B313F4D0080CCE2 /* UnderKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89961B313F330080CCE2 /* UnderKeyboard.swift */; };
+		2B8B89971B313F330080CCE2 /* UnderKeyboardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */; };
+		2B8B89981B313F4D0080CCE2 /* UnderKeyboardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */; };
 		2B8B89A01B313F820080CCE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B899F1B313F820080CCE2 /* AppDelegate.swift */; };
 		2B8B89A21B313F820080CCE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89A11B313F820080CCE2 /* ViewController.swift */; };
 		2B8B89A71B313F820080CCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8B89A61B313F820080CCE2 /* Assets.xcassets */; };
@@ -61,7 +61,7 @@
 		2B8B89861B313EE10080CCE2 /* UnderKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnderKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B898B1B313EE10080CCE2 /* UnderKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderKeyboardTests.swift; sourceTree = "<group>"; };
 		2B8B898D1B313EE10080CCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B8B89961B313F330080CCE2 /* UnderKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboard.swift; sourceTree = "<group>"; };
+		2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardScrollView.swift; sourceTree = "<group>"; };
 		2B8B899D1B313F820080CCE2 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B899F1B313F820080CCE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8B89A11B313F820080CCE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		2B8B897E1B313EE10080CCE2 /* UnderKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				2B8B89961B313F330080CCE2 /* UnderKeyboard.swift */,
+				2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */,
 				2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */,
 				2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */,
 				2B8B89811B313EE10080CCE2 /* Info.plist */,
@@ -293,7 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B8B89971B313F330080CCE2 /* UnderKeyboard.swift in Sources */,
+				2B8B89971B313F330080CCE2 /* UnderKeyboardScrollView.swift in Sources */,
 				2B24A4DA1B4F407F00FC7C7F /* UnderKeyboardObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B8B898C1B313EE10080CCE2 /* UnderKeyboardTests.swift in Sources */,
-				2B8B89981B313F4D0080CCE2 /* UnderKeyboard.swift in Sources */,
+				2B8B89981B313F4D0080CCE2 /* UnderKeyboardScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

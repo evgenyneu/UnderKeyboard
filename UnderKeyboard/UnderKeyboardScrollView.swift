@@ -1,22 +1,19 @@
 import UIKit
 
-let tegUnderKeyboard = UnderKeyboard()
-
 @objc
 /**
 
 Moves scroll view content from under the keyboard on iOS. It adjusts the bottom inset of the scroll view by the height of the keyboard when it is shown.
 
 */
-public class UnderKeyboard {
-  
+public class UnderKeyboardScrollView {
   private weak var scrollView: UIScrollView?
   private weak var bottomLayoutGuide: UILayoutSupport?
-  
   private let keyboardObserver = UnderKeyboardObserver()
   
-  private class var shared: UnderKeyboard {
-    return tegUnderKeyboard
+  public init() {
+    keyboardObserver.start()
+    keyboardObserver.willAnimate = keyboardWillAnimate
   }
   
   /**
@@ -26,16 +23,9 @@ public class UnderKeyboard {
   - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be used for adjusting  the scroll view insets.
   
   */
-  public class func scrollView(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
-    shared.scrollView = scrollView
-    shared.bottomLayoutGuide = bottomLayoutGuide
-  }
-  
-  private init() {
-    keyboardObserver.start()
-    
-    keyboardObserver.willAnimate = keyboardWillShow
-      
+  public func setup(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
+    self.scrollView = scrollView
+    self.bottomLayoutGuide = bottomLayoutGuide
   }
   
   deinit {
@@ -43,7 +33,7 @@ public class UnderKeyboard {
   }
 
   
-  func keyboardWillShow(isShowing: Bool, beginHeight: CGFloat, endHeight: CGFloat) {
+  func keyboardWillAnimate(isShowing: Bool, beginHeight: CGFloat, endHeight: CGFloat) {
     if isShowing {
       let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
       let height = endHeight - layoutGuideHeight

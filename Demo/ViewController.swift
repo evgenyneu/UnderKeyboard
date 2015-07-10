@@ -3,17 +3,16 @@ import UnderKeyboard
 
 class ViewController: UIViewController {
   @IBOutlet weak var textView: UITextView!
+  var underKeyboardScrollView = UnderKeyboardScrollView()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    UnderKeyboard.scrollView(textView, bottomLayoutGuide: bottomLayoutGuide)
+    underKeyboardScrollView.setup(textView, bottomLayoutGuide: bottomLayoutGuide)
   }
 
   @IBAction func onCloseKeyboardTapped(sender: AnyObject) {
     textView.resignFirstResponder()
-
   }
-
 }
 
