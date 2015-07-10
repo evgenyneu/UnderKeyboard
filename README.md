@@ -36,7 +36,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 ### Move content up
 
-When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length when a keyboard appears. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint can be both a simple `equal` relation consraint or it can be `greater than`, as shown in the demo.
+When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length when a keyboard appears. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint relation can be a simple `equal` or it can be `greater than` relation that is used in the demo app.
 
 ```Swift
 @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
