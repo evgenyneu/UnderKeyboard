@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="4kL-5X-ArH">
             <objects>
-                <viewController id="JGb-BS-J7U" sceneMemberID="viewController">
+                <viewController id="JGb-BS-J7U" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ka5-n1-kJV"/>
                         <viewControllerLayoutGuide type="bottom" id="fIq-we-Lp6"/>
@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-iG-88K">
                                 <rect key="frame" x="20" y="258" width="560" height="85"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWA-pq-yp5">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWA-pq-yp5">
                                         <rect key="frame" x="15" y="15" width="530" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -33,7 +33,7 @@
                                             <constraint firstAttribute="height" constant="1" id="1ER-7o-YB9"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-cv-ejY">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-cv-ejY">
                                         <rect key="frame" x="15" y="53" width="530" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -61,11 +61,17 @@
                             <constraint firstItem="wRB-iG-88K" firstAttribute="centerY" secondItem="Xfb-B9-0xB" secondAttribute="centerY" id="hvO-tM-fJi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sCr-9r-JGz"/>
+                    <navigationItem key="navigationItem" id="HLc-WH-sGb">
+                        <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="pAe-Im-bjS">
+                            <connections>
+                                <action selector="didTapCloseKeyboard:" destination="JGb-BS-J7U" id="HHg-Sy-6nA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZ3-8a-ulT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-498"/>
+            <point key="canvasLocation" x="2098" y="-498"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="O9U-vS-nKo">
@@ -75,13 +81,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Nae-N8-CNL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="1" green="0.43921568630000002" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JGb-BS-J7U" kind="relationship" relationship="viewControllers" id="6mB-VS-AzS"/>
+                        <segue destination="4XA-LO-3gZ" kind="relationship" relationship="viewControllers" id="6mB-VS-AzS"/>
                         <segue destination="bMX-L3-lVV" kind="relationship" relationship="viewControllers" id="ZI0-BM-FEf"/>
                     </connections>
                 </tabBarController>
@@ -89,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="639" y="-180"/>
         </scene>
-        <!--View Controller-->
+        <!--Scroll View Controller-->
         <scene sceneID="3QI-3H-Od9">
             <objects>
-                <viewController id="bMX-L3-lVV" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bMX-L3-lVV" customClass="ScrollViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ieS-bT-r2h"/>
                         <viewControllerLayoutGuide type="bottom" id="7TR-sD-YER"/>
@@ -147,6 +150,25 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4h-90-S8w" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1439" y="190"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="APU-CS-SW6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4XA-LO-3gZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sCr-9r-JGz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEw-dY-v11">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JGb-BS-J7U" kind="relationship" relationship="rootViewController" id="iQ3-Ku-P7h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cyo-O7-3ND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="-498"/>
         </scene>
     </scenes>
 </document>

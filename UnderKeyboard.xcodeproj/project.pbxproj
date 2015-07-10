@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B24A4DA1B4F407F00FC7C7F /* UnderKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */; };
 		2B24A4DB1B4F562000FC7C7F /* UnderKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */; };
+		2B24A4DD1B4F5C7100FC7C7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4DC1B4F5C7100FC7C7F /* ViewController.swift */; };
 		2B6F0F1A1B31441700DC6259 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B6F0F1B1B31441700DC6259 /* UnderKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,7 +18,7 @@
 		2B8B89971B313F330080CCE2 /* UnderKeyboardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */; };
 		2B8B89981B313F4D0080CCE2 /* UnderKeyboardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */; };
 		2B8B89A01B313F820080CCE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B899F1B313F820080CCE2 /* AppDelegate.swift */; };
-		2B8B89A21B313F820080CCE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89A11B313F820080CCE2 /* ViewController.swift */; };
+		2B8B89A21B313F820080CCE2 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89A11B313F820080CCE2 /* ScrollViewController.swift */; };
 		2B8B89A71B313F820080CCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8B89A61B313F820080CCE2 /* Assets.xcassets */; };
 		2B8B89AA1B313F820080CCE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8B89A81B313F820080CCE2 /* LaunchScreen.storyboard */; };
 		2B8B89CC1B313FB00080CCE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8B89CB1B313FB00080CCE2 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardObserver.swift; sourceTree = "<group>"; };
+		2B24A4DC1B4F5C7100FC7C7F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnderKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnderKeyboard.h; sourceTree = "<group>"; };
 		2B8B89811B313EE10080CCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardScrollView.swift; sourceTree = "<group>"; };
 		2B8B899D1B313F820080CCE2 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B899F1B313F820080CCE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B8B89A11B313F820080CCE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B8B89A11B313F820080CCE2 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		2B8B89A61B313F820080CCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B8B89A91B313F820080CCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B8B89AB1B313F820080CCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,7 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				2B8B899F1B313F820080CCE2 /* AppDelegate.swift */,
-				2B8B89A11B313F820080CCE2 /* ViewController.swift */,
+				2B8B89A11B313F820080CCE2 /* ScrollViewController.swift */,
+				2B24A4DC1B4F5C7100FC7C7F /* ViewController.swift */,
 				2B8B89CB1B313FB00080CCE2 /* Main.storyboard */,
 				2B8B89A61B313F820080CCE2 /* Assets.xcassets */,
 				2B8B89A81B313F820080CCE2 /* LaunchScreen.storyboard */,
@@ -313,7 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B8B89A21B313F820080CCE2 /* ViewController.swift in Sources */,
+				2B24A4DD1B4F5C7100FC7C7F /* ViewController.swift in Sources */,
+				2B8B89A21B313F820080CCE2 /* ScrollViewController.swift in Sources */,
 				2B8B89A01B313F820080CCE2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
