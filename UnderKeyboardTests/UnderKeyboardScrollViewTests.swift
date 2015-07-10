@@ -1,7 +1,7 @@
 import UIKit
 import XCTest
 
-class UnderKeyboardTests: XCTestCase {
+class UnderKeyboardScrollViewTests: XCTestCase {
   
   var scrollView: UIScrollView!
   var underKeyboardScrollView: UnderKeyboardScrollView!
