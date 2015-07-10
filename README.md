@@ -49,7 +49,7 @@ override func viewDidLoad() {
 }
 ```
 
-<img src'https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='400'>
+<img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='400'>
 
 
 ### Adjusting scroll view bottom insets
