@@ -14,7 +14,7 @@ public final class UnderKeyboardObserver: NSObject {
   }
   
   deinit {
-    notificationCenter.removeObserver(self)
+    stop()
   }
   
   public func start() {

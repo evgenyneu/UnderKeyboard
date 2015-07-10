@@ -33,29 +33,15 @@ public class UnderKeyboard {
   
   private init() {
     keyboardObserver.start()
-//    registerForKeyboardNotifications()
     
     keyboardObserver.willAnimate = keyboardWillShow
       
   }
   
   deinit {
-//    unRegisterForKeyboardNotifications()
+    keyboardObserver.stop()
   }
-//  
-//  private func registerForKeyboardNotifications() {
-//    NSNotificationCenter.defaultCenter().addObserver(self,
-//      selector: "keyboardDidShow:",
-//      name: UIKeyboardDidShowNotification, object: nil)
-//    
-//    NSNotificationCenter.defaultCenter().addObserver(self,
-//      selector: "keyboardWillHide:",
-//      name: UIKeyboardWillHideNotification, object: nil)
-//  }
-//  
-//  private func unRegisterForKeyboardNotifications() {
-//    NSNotificationCenter.defaultCenter().removeObserver(self)
-//  }
+
   
   func keyboardWillShow(isShowing: Bool, beginHeight: CGFloat, endHeight: CGFloat) {
     if isShowing {
@@ -74,28 +60,5 @@ public class UnderKeyboard {
       scrollView?.contentInset = UIEdgeInsetsZero;
       scrollView?.scrollIndicatorInsets = UIEdgeInsetsZero;
     }
-  }
-  
-  func keyboardDidShow(notification: NSNotification) {
-    if let userInfo = notification.userInfo,
-      let value = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
-
-        let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
-        let height = value.CGRectValue().size.height - layoutGuideHeight
-        
-        let insets =  UIEdgeInsets(
-          top: 0,
-          left: 0,
-          bottom: height,
-          right: 0)
-        
-        scrollView?.contentInset = insets
-        scrollView?.scrollIndicatorInsets = insets
-    }
-  }
-  
-  func keyboardWillHide(notification: NSNotification) {
-    scrollView?.contentInset = UIEdgeInsetsZero;
-    scrollView?.scrollIndicatorInsets = UIEdgeInsetsZero;
   }
 }
