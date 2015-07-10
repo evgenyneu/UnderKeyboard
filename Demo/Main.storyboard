@@ -53,7 +53,7 @@
                                     <constraint firstItem="2Br-Z5-0rK" firstAttribute="leading" secondItem="wRB-iG-88K" secondAttribute="leading" id="sEq-Ur-6Vl"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-Mg-4L5">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-Mg-4L5">
                                 <rect key="frame" x="20" y="341" width="560" height="58"/>
                                 <color key="backgroundColor" red="0.73938604797979801" green="0.32189971839302273" blue="0.25309860481230673" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
@@ -71,7 +71,8 @@
                             <constraint firstItem="wRB-iG-88K" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="F4o-su-aJ7"/>
                             <constraint firstItem="JOB-Mg-4L5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="bottom" constant="30" id="Hbx-9V-Y34"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wRB-iG-88K" secondAttribute="trailing" id="NiZ-5c-ffT"/>
-                            <constraint firstItem="wRB-iG-88K" firstAttribute="centerY" secondItem="Xfb-B9-0xB" secondAttribute="centerY" id="hvO-tM-fJi"/>
+                            <constraint firstItem="wRB-iG-88K" firstAttribute="centerY" secondItem="Xfb-B9-0xB" secondAttribute="centerY" priority="750" id="hvO-tM-fJi"/>
+                            <constraint firstItem="fIq-we-Lp6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JOB-Mg-4L5" secondAttribute="bottom" constant="50" id="ohi-W5-W8O"/>
                             <constraint firstItem="JOB-Mg-4L5" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="tIc-qd-L6O"/>
                         </constraints>
                     </view>
