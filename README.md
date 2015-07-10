@@ -17,18 +17,18 @@ There are three ways you can add UnderKeyboard to your project.
 
 **Add source (iOS 7+)**
 
-Simply add [UnderKeyboard.swift](https://github.com/exchangegroup/UnderKeyboard/blob/master/UnderKeyboard/UnderKeyboard.swift) into your project.
+Simply add [UnderKeyboardDistrib.swift](https://github.com/exchangegroup/UnderKeyboard/blob/master/Distrib/UnderKeyboardDistrib.swift) into your project.
 
 **Setup with Carthage (iOS 8+)**
 
-Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 1.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 2.0` to your Cartfile and run `carthage update`.
 
 **Setup with CocoaPods (iOS 8+)**
 
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
-    pod 'UnderKeyboard', '~> 1.0'
+    pod 'UnderKeyboard', '~> 2.0'
 
 
 ## Usage
