@@ -29,4 +29,18 @@ class UnderKeyboardLayoutConstraintTests: XCTestCase {
     
     XCTAssertEqual(12, constraint.constant)
   }
+  
+  func testKeepConstant() {
+    constraint.constant = 50
+    
+    underKeyboardLayoutConstraint.setup(constraint, view: view, minMargin: 10)
+    
+    postKeyboardWillShowNotification(CGSize(width: 46, height: 50))
+    
+    XCTAssertEqual(50, constraint.constant)
+    
+    postKeyboardWillHideNotification()
+    
+    XCTAssertEqual(50, constraint.constant)
+  }
 }

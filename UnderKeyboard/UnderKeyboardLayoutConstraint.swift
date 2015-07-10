@@ -11,6 +11,8 @@ public class UnderKeyboardLayoutConstraint {
   private weak var bottomLayoutGuide: UILayoutSupport?
   private let keyboardObserver = UnderKeyboardObserver()
   private var initialConstraintConstant: CGFloat = 0
+  private var minMargin: CGFloat = 10
+  
   private var viewToAnimate: UIView?
   
   public init() {
@@ -31,14 +33,17 @@ public class UnderKeyboardLayoutConstraint {
   
   - parameter constraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
   - parameter view: Supply a view that will be used to animate the constraint. It is usually the superview containing the view with the constraint.
+  - parameter minMargin: Specify the minimum margin between the keyboard and the bottom of the view the constraint is attached to. Default: 10.
   - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
   
   */
-  public func setup(bottomLayoutConstraint: NSLayoutConstraint, view: UIView,
+  public func setup(bottomLayoutConstraint: NSLayoutConstraint,
+    view: UIView, minMargin: CGFloat = 10,
     bottomLayoutGuide: UILayoutSupport? = nil) {
       
     initialConstraintConstant = bottomLayoutConstraint.constant
     self.bottomLayoutConstraint = bottomLayoutConstraint
+    self.minMargin = minMargin
     self.bottomLayoutGuide = bottomLayoutGuide
     self.viewToAnimate = view
     keyboardObserver.start()
@@ -51,6 +56,7 @@ public class UnderKeyboardLayoutConstraint {
     let correctedHeight = height - layoutGuideHeight
     
     if isShowing {
+      
       bottomLayoutConstraint.constant = correctedHeight + initialConstraintConstant
     } else {
       bottomLayoutConstraint.constant = initialConstraintConstant
