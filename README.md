@@ -39,7 +39,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 ### Move content up
 
-When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length when a keyboard appears. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint relation can be a simple `equal` or it can be `greater than` relation that is used in the demo app.
+When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint relation can be a simple `equal` or it can be `greater than` relation that is used in the demo app.
 
 ```Swift
 @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
@@ -79,7 +79,7 @@ When virtual keyboard is shown we adjust the bottom inset of the scroll view by 
 
 ### Using keyboard observer directly
 
-This library includes the `UnderKeyboardObserver` class that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. Your function will receive the height of the keyboard and whether it is shown or hidden arguments.
+This library includes the `UnderKeyboardObserver` class that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. Your function will receive the height of the keyboard and whether it is shown or hidden.
 
 ```Swift
 var keyboardObserver = UnderKeyboardObserver()
