@@ -47,10 +47,15 @@ public class UnderKeyboardLayoutConstraint {
   
   /**
   
-  - parameter constraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
+  Supply a bottom Auto Layout constraint. Its constant value will be adjusted by the height of the keyboard when it appears and hides.
+  
+  - parameter bottomLayoutConstraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
+  
   - parameter view: Supply a view that will be used to animate the constraint. It is usually the superview containing the view with the constraint.
+  
   - parameter minMargin: Specify the minimum margin between the keyboard and the bottom of the view the constraint is attached to. Default: 10.
-  - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
+  
+  - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
   
   */
   public func setup(bottomLayoutConstraint: NSLayoutConstraint,
@@ -103,7 +108,7 @@ import UIKit
 
 /**
 
-Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and animation.
+Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and moving view from under the keyboard.
 
 */
 public final class UnderKeyboardObserver: NSObject {
@@ -111,7 +116,7 @@ public final class UnderKeyboardObserver: NSObject {
   
   let notificationCenter: NSNotificationCenter
   
-  /// Function that will be called before the keyboad is shown and before animation is started.
+  /// Function that will be called before the keyboard is shown and before animation is started.
   public var willAnimateKeyboard: AnimationCallback?
   
   /// Function that will be called inside the animation block. This can be used to call `layoutIfNeeded` on the view.
@@ -205,9 +210,11 @@ public class UnderKeyboardScrollView {
   
   /**
   
+  Supply a scroll view object. Its bottom inset will be adjusted by the height of the keyboard when it appears and hides.
+  
   - parameter scrollView: Supply a scroll view or any of its subclasses. Its bottom inset will be adjusted to the height of the keyboard when it is shown.
   
-  - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be used for adjusting  the scroll view insets.
+  - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be used for adjusting  the scroll view insets.
   
   */
   public func setup(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
