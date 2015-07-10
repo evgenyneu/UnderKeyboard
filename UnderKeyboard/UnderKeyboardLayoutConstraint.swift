@@ -56,8 +56,10 @@ public class UnderKeyboardLayoutConstraint {
     let correctedHeight = height - layoutGuideHeight
     
     if isShowing {
-      
-      bottomLayoutConstraint.constant = correctedHeight + initialConstraintConstant
+      let newConstantValue = correctedHeight + minMargin
+      if newConstantValue > bottomLayoutConstraint.constant {
+        bottomLayoutConstraint.constant = newConstantValue
+      }
     } else {
       bottomLayoutConstraint.constant = initialConstraintConstant
     }
