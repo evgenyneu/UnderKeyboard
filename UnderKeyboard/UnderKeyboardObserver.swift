@@ -2,7 +2,7 @@ import UIKit
 
 /**
 
-Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and animation.
+Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and moving view from under the keyboard.
 
 */
 public final class UnderKeyboardObserver: NSObject {
@@ -10,7 +10,7 @@ public final class UnderKeyboardObserver: NSObject {
   
   let notificationCenter: NSNotificationCenter
   
-  /// Function that will be called before the keyboad is shown and before animation is started.
+  /// Function that will be called before the keyboard is shown and before animation is started.
   public var willAnimateKeyboard: AnimationCallback?
   
   /// Function that will be called inside the animation block. This can be used to call `layoutIfNeeded` on the view.

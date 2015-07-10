@@ -32,10 +32,15 @@ public class UnderKeyboardLayoutConstraint {
   
   /**
   
-  - parameter constraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
+  Supply a bottom Auto Layout constraint. Its constant value will be adjusted by the height of the keyboard when it appears and hides.
+  
+  - parameter bottomLayoutConstraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
+  
   - parameter view: Supply a view that will be used to animate the constraint. It is usually the superview containing the view with the constraint.
+  
   - parameter minMargin: Specify the minimum margin between the keyboard and the bottom of the view the constraint is attached to. Default: 10.
-  - parameter buttonLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
+  
+  - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
   
   */
   public func setup(bottomLayoutConstraint: NSLayoutConstraint,
