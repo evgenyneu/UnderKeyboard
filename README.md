@@ -8,7 +8,7 @@
 [carthage]: https://github.com/Carthage/Carthage
 
 This library helps moving your views when a keyboard appears and move them back in place when it hides.
-
+It includes helper classes for animating a bottom Auto Layout constraint and the bottom inset of a scroll view.
 
 
 ## Setup
@@ -74,7 +74,7 @@ When virtual keyboard is shown we adjust the bottom inset of the scroll view by 
 <img src="https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_the_keyboard_ios.png" alt="Move scroll view content from under the keyboard in iOS/Swift" width="640" />
 
 
-### Using keyboard observer
+### Using keyboard observer directly
 
 This library includes a `UnderKeyboardObserver` that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. The function will be called with the height of the keyboard passed an an argument.
 
