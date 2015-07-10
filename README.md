@@ -9,7 +9,7 @@
 
 This library helps moving your views when a keyboard appears and move them back in place when it hides.
 It includes helper classes for animating a bottom Auto Layout constraint and the bottom inset of a scroll view.
-This library is written in Swift 2.0 and required Xcode 7.
+This library is written in Swift 2.0 and requires Xcode 7.
 
 
 <img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
