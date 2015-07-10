@@ -94,7 +94,7 @@ override func viewDidLoad() {
     myConstraint.constant = height
   }
 
-  // Called inside the UIView.animateWithDuration block
+  // Called inside the UIView.animateWithDuration animations block
   keyboardObserver.animateKeyboard = { isShowing, height in
     myView.layoutIfNeeded()
   }
