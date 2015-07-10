@@ -13,7 +13,7 @@ public class UnderKeyboardScrollView {
   
   public init() {
     keyboardObserver.start()
-    keyboardObserver.willAnimate = keyboardWillAnimate
+    keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
   }
   
   deinit {

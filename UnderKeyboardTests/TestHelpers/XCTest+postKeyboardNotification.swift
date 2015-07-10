@@ -17,7 +17,7 @@ extension XCTest {
   }
   
   private func keyboardNotificationUserInfo(keyboardSize: CGSize) -> [NSObject: AnyObject]{
-    let rect = CGRect(origin: CGPoint(), size: CGSize(width: 49, height: 51))
+    let rect = CGRect(origin: CGPoint(), size: keyboardSize)
     let rectValue = NSValue(CGRect: rect)
     
     return [

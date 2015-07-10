@@ -7,18 +7,15 @@ Detects appearance of software keyboard and calls the supplied closures that can
 */
 public final class UnderKeyboardObserver: NSObject {
   public typealias AnimationCallback = (isShowing: Bool, height: CGFloat) -> ()
-  public typealias AnimationEnd = (isShowing: Bool, finished: Bool, height: CGFloat) -> ()
   
   let notificationCenter: NSNotificationCenter
   
   /// Function that will be called before the keyboad is shown and before animation is started.
-  public var willAnimate: AnimationCallback?
+  public var willAnimateKeyboard: AnimationCallback?
   
   /// Function that will be called inside the animation block.
-  public var animate: AnimationCallback?
+  public var animateKeyboard: AnimationCallback?
   
-  /// Function that will be called when the keyboard animation finishes.
-  public var didAnimate: AnimationEnd?
   
   public override init() {
     notificationCenter = NSNotificationCenter.defaultCenter()
@@ -52,17 +49,15 @@ public final class UnderKeyboardObserver: NSObject {
       let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
           
-      willAnimate?(isShowing: isShowing, height: height)
+      willAnimateKeyboard?(isShowing: isShowing, height: height)
         
       UIView.animateWithDuration(duration,
         delay: NSTimeInterval(0),
         options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.unsignedLongValue),
         animations: { [weak self] in
-          self?.animate?(isShowing: isShowing, height: height)
+          self?.animateKeyboard?(isShowing: isShowing, height: height)
         },
-        completion: { [weak self] finished in
-          self?.didAnimate?(isShowing: isShowing, finished: finished, height: height)
-        }
+        completion: nil
       )
     }
   }
