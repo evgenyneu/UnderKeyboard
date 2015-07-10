@@ -13,9 +13,11 @@ public final class UnderKeyboardObserver: NSObject {
   /// Function that will be called before the keyboad is shown and before animation is started.
   public var willAnimateKeyboard: AnimationCallback?
   
-  /// Function that will be called inside the animation block.
+  /// Function that will be called inside the animation block. This can be used to call `layoutIfNeeded` on the view.
   public var animateKeyboard: AnimationCallback?
   
+  /// Current height of the keyboard. Nil if unknown.
+  public var currentKeyboardHeight: CGFloat?
   
   public override init() {
     notificationCenter = NSNotificationCenter.defaultCenter()
@@ -48,7 +50,7 @@ public final class UnderKeyboardObserver: NSObject {
       let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue().height,
       let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
-          
+        
       willAnimateKeyboard?(isShowing: isShowing, height: height)
         
       UIView.animateWithDuration(duration,
@@ -59,6 +61,8 @@ public final class UnderKeyboardObserver: NSObject {
         },
         completion: nil
       )
+        
+      currentKeyboardHeight = height
     }
   }
 }

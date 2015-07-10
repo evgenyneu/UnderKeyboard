@@ -95,4 +95,20 @@ class UnderKeyboardObserverTests: XCTestCase {
     XCTAssertFalse(isShowingReceived!)
     XCTAssertEqual(0, heightReceived!)
   }
+  
+  // MARK: - Current keyboard height
+  
+  func testCurrentKeyboardHeight() {
+    obj.start()
+    
+    XCTAssert(obj.currentKeyboardHeight == nil)
+    
+    postKeyboardWillShowNotification(CGSize(width: 18, height: 132))
+    
+    XCTAssertEqual(132, obj.currentKeyboardHeight!)
+    
+    postKeyboardWillHideNotification()
+    
+    XCTAssertEqual(0, obj.currentKeyboardHeight!)
+  }
 }
