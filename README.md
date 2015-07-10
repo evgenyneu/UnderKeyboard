@@ -76,7 +76,7 @@ When virtual keyboard is shown we adjust the bottom inset of the scroll view by 
 
 ### Using keyboard observer directly
 
-This library includes a `UnderKeyboardObserver` that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. The function will be called with the height of the keyboard passed an an argument.
+This library includes the `UnderKeyboardObserver` class that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. The function will be called with the height of the keyboard passed an an argument.
 
 ```Swift
 var keyboardObserver = UnderKeyboardObserver()
