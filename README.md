@@ -33,19 +33,24 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 ## Usage
 
-Call `UnderKeyboard.scrollView` function before keyboard is shown. It can be done in `viewDidLoad`.
 
+### Move content up
 
-
-**Note**: One can also use `UITextView` and `UITableView` objects or other subclasses of `UIScrollView`.
-
-### Account for bottom layout guide
-
-If your view controller has a tab bar you can supply its bottom layout guide. Its height will be taken into account during inset calculation.
+When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length when a keyboard appears. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint can be both a simple `equal` relation consraint or it can be `greater than`, as shown in the demo.
 
 ```Swift
-UnderKeyboard.scrollView(scrollView, bottomLayoutGuide: bottomLayoutGuide)
+@IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+var underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
+
+override func viewDidLoad() {
+  super.viewDidLoad()
+  underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view,
+    bottomLayoutGuide: bottomLayoutGuide)
+}
 ```
+
+<img src'https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='400'>
+
 
 ### Adjusting scroll view bottom insets
 
@@ -69,6 +74,29 @@ When virtual keyboard is shown we adjust the bottom inset of the scroll view by 
 <img src="https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_the_keyboard_ios.png" alt="Move scroll view content from under the keyboard in iOS/Swift" width="640" />
 
 
+### Using keyboard observer
+
+This library includes a `UnderKeyboardObserver` that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. The function will be called with the height of the keyboard passed an an argument.
+
+```Swift
+var keyboardObserver = UnderKeyboardObserver()
+
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  keyboardObserver.start()
+
+  // Called before the keyboard is animated
+  keyboardObserver.willAnimateKeyboard = { isShowing, height in
+    myConstraint.constant = height
+  }
+
+  // Called inside the UIView.animateWithDuration block
+  keyboardObserver.animateKeyboard = { isShowing, height in
+    myView.layoutIfNeeded()
+  }
+}
+```
 
 
 ## Reference
