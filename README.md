@@ -11,6 +11,8 @@ This library helps moving your views when a keyboard appears and move them back 
 It includes helper classes for animating a bottom Auto Layout constraint and the bottom inset of a scroll view.
 
 
+<imt src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
+
 ## Setup
 
 There are three ways you can add UnderKeyboard to your project.
