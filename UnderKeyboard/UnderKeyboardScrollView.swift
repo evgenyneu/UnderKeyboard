@@ -16,6 +16,10 @@ public class UnderKeyboardScrollView {
     keyboardObserver.willAnimate = keyboardWillAnimate
   }
   
+  deinit {
+    keyboardObserver.stop()
+  }
+  
   /**
   
   - parameter scrollView: Supply a scroll view or any of its subclasses. Its bottom inset will be adjusted to the height of the keyboard when it is shown.
@@ -28,15 +32,10 @@ public class UnderKeyboardScrollView {
     self.bottomLayoutGuide = bottomLayoutGuide
   }
   
-  deinit {
-    keyboardObserver.stop()
-  }
-
-  
-  func keyboardWillAnimate(isShowing: Bool, beginHeight: CGFloat, endHeight: CGFloat) {
+  func keyboardWillAnimate(isShowing: Bool, height: CGFloat) {
     if isShowing {
       let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
-      let height = endHeight - layoutGuideHeight
+      let height = height - layoutGuideHeight
 
       let insets =  UIEdgeInsets(
         top: 0,

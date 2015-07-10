@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B24A4DA1B4F407F00FC7C7F /* UnderKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */; };
+		2B24A4DB1B4F562000FC7C7F /* UnderKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */; };
 		2B6F0F1A1B31441700DC6259 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B6F0F1B1B31441700DC6259 /* UnderKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -304,6 +305,7 @@
 			files = (
 				2B8B898C1B313EE10080CCE2 /* UnderKeyboardTests.swift in Sources */,
 				2B8B89981B313F4D0080CCE2 /* UnderKeyboardScrollView.swift in Sources */,
+				2B24A4DB1B4F562000FC7C7F /* UnderKeyboardObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

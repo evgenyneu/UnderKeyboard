@@ -1,11 +1,13 @@
+import UIKit
+
 /**
 
 Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and animation.
 
 */
 public final class UnderKeyboardObserver: NSObject {
-  public typealias AnimationCallback = (isShowing: Bool, beginHeight: CGFloat, endHeight: CGFloat) -> ()
-  public typealias AnimationEnd = (isShowing: Bool, finished: Bool, beginHeight: CGFloat, endHeight: CGFloat) -> ()
+  public typealias AnimationCallback = (isShowing: Bool, height: CGFloat) -> ()
+  public typealias AnimationEnd = (isShowing: Bool, finished: Bool, height: CGFloat) -> ()
   
   let notificationCenter: NSNotificationCenter
   
@@ -46,21 +48,20 @@ public final class UnderKeyboardObserver: NSObject {
     let isShowing = notification.name == UIKeyboardWillShowNotification
     
     if let userInfo = notification.userInfo,
-      let beginHeigth = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().height,
-      let endHeight = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue().height,
+      let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue().height,
       let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
           
-      willAnimate?(isShowing: isShowing, beginHeight: beginHeigth, endHeight: endHeight)
+      willAnimate?(isShowing: isShowing, height: height)
         
       UIView.animateWithDuration(duration,
         delay: NSTimeInterval(0),
         options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.unsignedLongValue),
         animations: { [weak self] in
-          self?.animate?(isShowing: isShowing, beginHeight: beginHeigth, endHeight: endHeight)
+          self?.animate?(isShowing: isShowing, height: height)
         },
         completion: { [weak self] finished in
-          self?.didAnimate?(isShowing: isShowing, finished: finished, beginHeight: beginHeigth, endHeight: endHeight)
+          self?.didAnimate?(isShowing: isShowing, finished: finished, height: height)
         }
       )
     }
