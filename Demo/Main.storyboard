@@ -19,22 +19,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-iG-88K">
-                                <rect key="frame" x="20" y="226" width="560" height="85"/>
+                                <rect key="frame" x="20" y="259" width="560" height="78"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWA-pq-yp5">
-                                        <rect key="frame" x="15" y="15" width="530" height="17"/>
+                                        <rect key="frame" x="15" y="13" width="530" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Br-Z5-0rK">
-                                        <rect key="frame" x="0.0" y="42" width="560" height="1"/>
+                                        <rect key="frame" x="0.0" y="40" width="560" height="1"/>
                                         <color key="backgroundColor" red="0.14800996129999999" green="0.02484939982" blue="0.16299715910000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="1ER-7o-YB9"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-cv-ejY">
-                                        <rect key="frame" x="15" y="53" width="530" height="17"/>
+                                        <rect key="frame" x="15" y="51" width="530" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -42,10 +42,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7MX-cv-ejY" secondAttribute="trailing" constant="15" id="ANh-YK-LQS"/>
-                                    <constraint firstItem="nWA-pq-yp5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="top" constant="15" id="AXp-pA-F0e"/>
+                                    <constraint firstItem="nWA-pq-yp5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="top" constant="13" id="AXp-pA-F0e"/>
                                     <constraint firstItem="nWA-pq-yp5" firstAttribute="leading" secondItem="wRB-iG-88K" secondAttribute="leading" constant="15" id="K1a-Sd-zZo"/>
                                     <constraint firstItem="2Br-Z5-0rK" firstAttribute="top" secondItem="nWA-pq-yp5" secondAttribute="bottom" constant="10" id="NjG-Xq-15R"/>
-                                    <constraint firstAttribute="bottom" secondItem="7MX-cv-ejY" secondAttribute="bottom" constant="15" id="PcV-O0-4df"/>
+                                    <constraint firstAttribute="bottom" secondItem="7MX-cv-ejY" secondAttribute="bottom" constant="10" id="PcV-O0-4df"/>
                                     <constraint firstAttribute="trailing" secondItem="nWA-pq-yp5" secondAttribute="trailing" constant="15" id="Qcf-Q2-flZ"/>
                                     <constraint firstAttribute="trailing" secondItem="2Br-Z5-0rK" secondAttribute="trailing" id="XJG-sr-Flg"/>
                                     <constraint firstItem="7MX-cv-ejY" firstAttribute="top" secondItem="2Br-Z5-0rK" secondAttribute="bottom" constant="10" id="ZMz-4r-xkr"/>
@@ -54,9 +54,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-Mg-4L5">
-                                <rect key="frame" x="20" y="341" width="560" height="58"/>
+                                <rect key="frame" x="20" y="347" width="560" height="44"/>
                                 <color key="backgroundColor" red="0.73938604797979801" green="0.32189971839302273" blue="0.25309860481230673" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -64,15 +64,23 @@
                                     <action selector="didTapLoginButton:" destination="JGb-BS-J7U" eventType="touchUpInside" id="HOx-tA-spH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acK-ng-2sw">
+                                <rect key="frame" x="257" y="116" width="86" height="103"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="86"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.23137254901960785" green="0.039215686274509803" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wRB-iG-88K" firstAttribute="top" secondItem="acK-ng-2sw" secondAttribute="bottom" constant="40" id="6QP-fK-6Wt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JOB-Mg-4L5" secondAttribute="trailing" id="Diy-aq-8hv"/>
                             <constraint firstItem="wRB-iG-88K" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="F4o-su-aJ7"/>
-                            <constraint firstItem="JOB-Mg-4L5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="bottom" constant="30" id="Hbx-9V-Y34"/>
+                            <constraint firstItem="JOB-Mg-4L5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="bottom" constant="10" id="Hbx-9V-Y34"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wRB-iG-88K" secondAttribute="trailing" id="NiZ-5c-ffT"/>
-                            <constraint firstItem="wRB-iG-88K" firstAttribute="centerY" secondItem="Xfb-B9-0xB" secondAttribute="centerY" priority="750" id="hvO-tM-fJi"/>
-                            <constraint firstItem="fIq-we-Lp6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JOB-Mg-4L5" secondAttribute="bottom" constant="50" id="ohi-W5-W8O"/>
+                            <constraint firstItem="acK-ng-2sw" firstAttribute="centerX" secondItem="Xfb-B9-0xB" secondAttribute="centerX" id="PmQ-1D-APP"/>
+                            <constraint firstItem="wRB-iG-88K" firstAttribute="centerY" secondItem="Xfb-B9-0xB" secondAttribute="centerY" priority="750" constant="30" id="hvO-tM-fJi"/>
+                            <constraint firstItem="fIq-we-Lp6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JOB-Mg-4L5" secondAttribute="bottom" constant="10" id="ohi-W5-W8O"/>
                             <constraint firstItem="JOB-Mg-4L5" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="tIc-qd-L6O"/>
                         </constraints>
                     </view>
@@ -84,6 +92,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bottomLayoutConstraint" destination="ohi-W5-W8O" id="8Sh-uA-e6I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZ3-8a-ulT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,11 +172,11 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
             </objects>
             <point key="canvasLocation" x="2098" y="190"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Login-->
         <scene sceneID="APU-CS-SW6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4XA-LO-3gZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sCr-9r-JGz"/>
+                    <tabBarItem key="tabBarItem" title="Login" image="Login" id="sCr-9r-JGz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bEw-dY-v11">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -181,11 +192,11 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
             </objects>
             <point key="canvasLocation" x="1439" y="-498"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Read-->
         <scene sceneID="gMY-J4-SmU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LTh-xO-3D7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="VoW-XA-e4A"/>
+                    <tabBarItem key="tabBarItem" title="Read" image="Read" id="VoW-XA-e4A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z7C-ON-NCH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -202,4 +213,8 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
             <point key="canvasLocation" x="1439" y="190"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Login" width="32" height="32"/>
+        <image name="Read" width="32" height="32"/>
+    </resources>
 </document>
