@@ -12,11 +12,16 @@ public class UnderKeyboardScrollView {
   private let keyboardObserver = UnderKeyboardObserver()
   
   public init() {
-    keyboardObserver.start()
     keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
   }
   
   deinit {
+    stop()
+  }
+  
+  
+  /// Stop listening for keyboard notifications.
+  public func stop() {
     keyboardObserver.stop()
   }
   
@@ -30,6 +35,7 @@ public class UnderKeyboardScrollView {
   public func setup(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
     self.scrollView = scrollView
     self.bottomLayoutGuide = bottomLayoutGuide
+    keyboardObserver.start()
   }
   
   func keyboardWillAnimate(isShowing: Bool, height: CGFloat) {

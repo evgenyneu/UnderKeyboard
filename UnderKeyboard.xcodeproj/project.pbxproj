@@ -12,6 +12,7 @@
 		2B24A4DD1B4F5C7100FC7C7F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4DC1B4F5C7100FC7C7F /* LoginViewController.swift */; };
 		2B24A4E41B4F724400FC7C7F /* UnderKeyboardObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4E31B4F724400FC7C7F /* UnderKeyboardObserverTests.swift */; };
 		2B24A4E81B4F72B500FC7C7F /* XCTest+postKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4E71B4F72B500FC7C7F /* XCTest+postKeyboardNotification.swift */; };
+		2B24A4EA1B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4E91B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift */; };
 		2B6F0F1A1B31441700DC6259 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B6F0F1B1B31441700DC6259 /* UnderKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,6 +63,7 @@
 		2B24A4DC1B4F5C7100FC7C7F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2B24A4E31B4F724400FC7C7F /* UnderKeyboardObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardObserverTests.swift; sourceTree = "<group>"; };
 		2B24A4E71B4F72B500FC7C7F /* XCTest+postKeyboardNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+postKeyboardNotification.swift"; sourceTree = "<group>"; };
+		2B24A4E91B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnderKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnderKeyboard.h; sourceTree = "<group>"; };
 		2B8B89811B313EE10080CCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8B89961B313F330080CCE2 /* UnderKeyboardScrollView.swift */,
+				2B24A4E91B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift */,
 				2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */,
 				2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */,
 				2B8B89811B313EE10080CCE2 /* Info.plist */,
@@ -313,6 +316,7 @@
 			files = (
 				2B8B89971B313F330080CCE2 /* UnderKeyboardScrollView.swift in Sources */,
 				2B24A4DA1B4F407F00FC7C7F /* UnderKeyboardObserver.swift in Sources */,
+				2B24A4EA1B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
