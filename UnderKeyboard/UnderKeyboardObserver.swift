@@ -16,7 +16,7 @@ public final class UnderKeyboardObserver: NSObject {
   /// Function that will be called inside the animation block. This can be used to call `layoutIfNeeded` on the view.
   public var animateKeyboard: AnimationCallback?
   
-  /// Current height of the keyboard. Nil if unknown.
+  /// Current height of the keyboard. Has value `nil` if unknown.
   public var currentKeyboardHeight: CGFloat?
   
   public override init() {

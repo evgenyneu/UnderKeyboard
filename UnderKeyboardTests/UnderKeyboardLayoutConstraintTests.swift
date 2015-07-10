@@ -43,4 +43,15 @@ class UnderKeyboardLayoutConstraintTests: XCTestCase {
     
     XCTAssertEqual(63, constraint.constant)
   }
+  
+  
+  func testIncreaseConstraintConstant_whenSetupIsCalledWhenKeyboardIsAlreadyOpen() {
+    constraint.constant = 12
+    
+    postKeyboardWillShowNotification(CGSize(width: 46, height: 50))
+    
+    underKeyboardLayoutConstraint.setup(constraint, view: view)
+    
+    XCTAssertEqual(60, constraint.constant) // 35 + 10 (default min margin)
+  }
 }

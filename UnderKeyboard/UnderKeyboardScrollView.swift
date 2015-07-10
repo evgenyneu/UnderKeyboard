@@ -13,6 +13,7 @@ public class UnderKeyboardScrollView {
   
   public init() {
     keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
+    keyboardObserver.start()
   }
   
   deinit {
@@ -35,7 +36,6 @@ public class UnderKeyboardScrollView {
   public func setup(scrollView: UIScrollView, bottomLayoutGuide: UILayoutSupport? = nil) {
     self.scrollView = scrollView
     self.bottomLayoutGuide = bottomLayoutGuide
-    keyboardObserver.start()
   }
   
   func keyboardWillAnimate(isShowing: Bool, height: CGFloat) {

@@ -9,7 +9,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
 public class UnderKeyboardLayoutConstraint {
   private weak var bottomLayoutConstraint: NSLayoutConstraint?
   private weak var bottomLayoutGuide: UILayoutSupport?
-  private let keyboardObserver = UnderKeyboardObserver()
+  private var keyboardObserver = UnderKeyboardObserver()
   private var initialConstraintConstant: CGFloat = 0
   private var minMargin: CGFloat = 10
   
@@ -18,6 +18,7 @@ public class UnderKeyboardLayoutConstraint {
   public init() {
     keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
     keyboardObserver.animateKeyboard = animateKeyboard
+    keyboardObserver.start()
   }
   
   deinit {
@@ -46,7 +47,13 @@ public class UnderKeyboardLayoutConstraint {
     self.minMargin = minMargin
     self.bottomLayoutGuide = bottomLayoutGuide
     self.viewToAnimate = view
-    keyboardObserver.start()
+      
+    // Keyboard is already open when setup is called
+    if let currentKeyboardHeight = keyboardObserver.currentKeyboardHeight
+      where currentKeyboardHeight > 0 {
+        
+      keyboardWillAnimate(true, height: currentKeyboardHeight)
+    }
   }
   
   func keyboardWillAnimate(isShowing: Bool, height: CGFloat) {
