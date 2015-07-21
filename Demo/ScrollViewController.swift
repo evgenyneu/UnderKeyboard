@@ -3,12 +3,15 @@ import UnderKeyboard
 
 class ScrollViewController: UIViewController {
   @IBOutlet weak var textView: UITextView!
-  var underKeyboardScrollView = UnderKeyboardScrollView()
+  var underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
 
+  @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    underKeyboardScrollView.setup(textView, bottomLayoutGuide: bottomLayoutGuide)
+    underKeyboardLayoutConstraint.setup(bottomConstraint, view: view,
+      bottomLayoutGuide: bottomLayoutGuide)
   }
   
   @IBAction func didTapCloseJKeyboard(sender: AnyObject) {
