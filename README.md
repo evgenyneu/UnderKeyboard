@@ -83,7 +83,7 @@ override func viewDidLoad() {
 ### Getting height of the keyboard
 
 Use `currentKeyboardHeight` property of the `UnderKeyboardObserver` object to get the current keyboard height.
-The `start` method must first be called to start listening for keyboard notifications. The value returned by `currentKeyboardHeight` can be nil if no keyboard state is unknown. It can happen if no keyboard notifications occurred after the `start` method was called so we don't know if the keyboard is visible or hidden.
+The `start` method must first be called to start listening for keyboard notifications. The value returned by `currentKeyboardHeight` can be `nil` if keyboard state is unknown. It can happen if no keyboard notifications occurred after the `start` method was called so we don't know if the keyboard is visible or hidden.
 
 ```Swift
 var keyboardObserver = UnderKeyboardObserver()
