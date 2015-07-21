@@ -8,7 +8,7 @@
 [carthage]: https://github.com/Carthage/Carthage
 
 This library helps moving your views when a keyboard appears and move them back in place when it hides.
-It includes helper classes for animating a bottom Auto Layout constraint and the bottom inset of a scroll view.
+It includes helper classes for changing the length of a bottom Auto Layout constraint.
 This library is written in Swift 2.0 and requires Xcode 7.
 
 
@@ -55,27 +55,6 @@ override func viewDidLoad() {
 <img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='601'>
 
 
-### Adjusting scroll view bottom insets
-
-Suppose we have a text view that stretches all the way down to the bottom of the screen. If virtual keyboard appears it is shown over the scroll view content. The problem is there is no way for users to see the bottom of the scroll view content because is it obscured by the keyboard.
-
-To fix this problem you can use the `UnderKeyboardScrollView` class
-
-```Swift
-@IBOutlet weak var textView: UITextView!
-var underKeyboardScrollView = UnderKeyboardScrollView()
-
-override func viewDidLoad() {
-  super.viewDidLoad()
-  underKeyboardScrollView.setup(textView, bottomLayoutGuide: bottomLayoutGuide)
-}
-```
-
-
-When virtual keyboard is shown we adjust the bottom inset of the scroll view by the height of the keyboard.
-
-<img src="https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_the_keyboard_ios.png" alt="Move scroll view content from under the keyboard in iOS/Swift" width="640" />
-
 
 ### Using keyboard observer directly
 
@@ -98,6 +77,25 @@ override func viewDidLoad() {
   keyboardObserver.animateKeyboard = { isShowing, height in
     myView.layoutIfNeeded()
   }
+}
+```
+
+### Getting height of the keyboard
+
+Use `currentKeyboardHeight` property of the `UnderKeyboardObserver` object to get the current keyboard height.
+The `start` method must first be called to start listening for keyboard notifications. The value returned by `currentKeyboardHeight` can be nil if no keyboard state is unknown. It can happen if no keyboard notifications occurred after the `start` method was called so we don't know if the keyboard is visible or hidden.
+
+```Swift
+var keyboardObserver = UnderKeyboardObserver()
+
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  keyboardObserver.start()
+}
+
+func myFunction() {
+  keyboardObserver.currentKeyboardHeight
 }
 ```
 
