@@ -161,18 +161,19 @@ public final class UnderKeyboardObserver: NSObject {
       let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
         
-      willAnimateKeyboard?(isShowing: isShowing, height: height)
+      let correctedHeight = isShowing ? height : 0
+      willAnimateKeyboard?(isShowing: isShowing, height: correctedHeight)
         
       UIView.animateWithDuration(duration,
         delay: NSTimeInterval(0),
         options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.unsignedLongValue),
         animations: { [weak self] in
-          self?.animateKeyboard?(isShowing: isShowing, height: height)
+          self?.animateKeyboard?(isShowing: isShowing, height: correctedHeight)
         },
         completion: nil
       )
         
-      currentKeyboardHeight = height
+      currentKeyboardHeight = correctedHeight
     }
   }
 }
