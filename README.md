@@ -8,7 +8,7 @@
 [carthage]: https://github.com/Carthage/Carthage
 
 This library helps moving your views when a keyboard appears and move them back in place when it hides.
-It includes helper classes for changing the length of a bottom Auto Layout constraint.
+It includes helper class for changing the length of a bottom Auto Layout constraint.
 This library is written in Swift 2.0 and requires Xcode 7.
 
 
@@ -24,14 +24,14 @@ Simply add [UnderKeyboardDistrib.swift](https://github.com/exchangegroup/UnderKe
 
 **Setup with Carthage (iOS 8+)**
 
-Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 2.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 3.0` to your Cartfile and run `carthage update`.
 
 **Setup with CocoaPods (iOS 8+)**
 
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
-    pod 'UnderKeyboard', '~> 2.0'
+    pod 'UnderKeyboard', '~> 3.0'
 
 
 ## Usage
