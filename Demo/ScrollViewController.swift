@@ -3,7 +3,7 @@ import UnderKeyboard
 
 class ScrollViewController: UIViewController {
   @IBOutlet weak var textView: UITextView!
-  var underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
+  let underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
 
   @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
   
