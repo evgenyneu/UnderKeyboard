@@ -107,3 +107,7 @@ func myFunction() {
 ## License
 
 UnderKeyboard is released under the [MIT License](LICENSE).
+
+
+## 🐘
+<img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_keyboard_creature.jpg' width='400' alt='Creature under the keyboard'>
