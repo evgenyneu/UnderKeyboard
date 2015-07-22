@@ -40,7 +40,7 @@ Add `import UnderKeyboard` to your source code if you used Carthage or CocoaPods
 
 ### Move content up
 
-When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint relation can be a simple `equal` or it can be `greater than` relation that is used in the demo app.
+When a keyboard appears on screen it can obscure your views. One way of preventing it is to create a bottom Auto Layout constraint and increase its length. You can use the `UnderKeyboardLayoutConstraint` helper class that does exactly that. Note that bottom layout constraint relation can be a simple `equal` or it can be `greater than` relation that is used in the login screen of the demo app.
 
 ```Swift
 @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
