@@ -36,6 +36,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 ## Usage
 
+Add `import UnderKeyboard` to your source code if you used Carthage or CocoaPods setup methods.
 
 ### Move content up
 
