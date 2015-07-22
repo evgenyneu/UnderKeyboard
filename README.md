@@ -44,11 +44,14 @@ When a keyboard appears on screen it can obscure your views. One way of preventi
 
 ```Swift
 @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
-var underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
+var underKeyboardLayoutConstraint: UnderKeyboardLayoutConstraint?
 
 override func viewDidLoad() {
   super.viewDidLoad()
-  underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view,
+
+  underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
+
+  underKeyboardLayoutConstraint?.setup(bottomLayoutConstraint, view: view,
     bottomLayoutGuide: bottomLayoutGuide)
 }
 ```
@@ -62,20 +65,21 @@ override func viewDidLoad() {
 This library includes the `UnderKeyboardObserver` class that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. Your function will receive the height of the keyboard and whether it is shown or hidden.
 
 ```Swift
-var keyboardObserver = UnderKeyboardObserver()
+var keyboardObserver: UnderKeyboardObserver?
 
 override func viewDidLoad() {
   super.viewDidLoad()
 
-  keyboardObserver.start()
+  keyboardObserver = UnderKeyboardObserver()
+  keyboardObserver?.start()
 
   // Called before the keyboard is animated
-  keyboardObserver.willAnimateKeyboard = { isShowing, height in
+  keyboardObserver?.willAnimateKeyboard = { isShowing, height in
     myConstraint.constant = height
   }
 
   // Called inside the UIView.animateWithDuration animations block
-  keyboardObserver.animateKeyboard = { isShowing, height in
+  keyboardObserver?.animateKeyboard = { isShowing, height in
     myView.layoutIfNeeded()
   }
 }
@@ -87,16 +91,17 @@ Use `currentKeyboardHeight` property of the `UnderKeyboardObserver` object to ge
 The `start` method must first be called to start listening for keyboard notifications. The value returned by `currentKeyboardHeight` can be `nil` if keyboard state is unknown. It can happen if no keyboard notifications occurred after the `start` method was called so we don't know if the keyboard is visible or hidden.
 
 ```Swift
-var keyboardObserver = UnderKeyboardObserver()
+var keyboardObserver: UnderKeyboardObserver?
 
 override func viewDidLoad() {
   super.viewDidLoad()
 
-  keyboardObserver.start()
+  keyboardObserver = UnderKeyboardObserver()
+  keyboardObserver?.start()
 }
 
 func myFunction() {
-  keyboardObserver.currentKeyboardHeight
+  keyboardObserver?.currentKeyboardHeight
 }
 ```
 

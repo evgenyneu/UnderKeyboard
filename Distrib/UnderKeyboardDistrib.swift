@@ -15,13 +15,13 @@
 
 import UIKit
 
-@objc
+
 /**
 
 Adjusts the length (constant value) of the bottom layout constraint when keyboard shows and hides.
 
 */
-public class UnderKeyboardLayoutConstraint {
+@objc public class UnderKeyboardLayoutConstraint: NSObject {
   private weak var bottomLayoutConstraint: NSLayoutConstraint?
   private weak var bottomLayoutGuide: UILayoutSupport?
   private var keyboardObserver = UnderKeyboardObserver()
@@ -30,7 +30,9 @@ public class UnderKeyboardLayoutConstraint {
   
   private var viewToAnimate: UIView?
   
-  public init() {
+  public override init() {
+    super.init()
+    
     keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
     keyboardObserver.animateKeyboard = animateKeyboard
     keyboardObserver.start()
@@ -77,6 +79,8 @@ public class UnderKeyboardLayoutConstraint {
   }
   
   func keyboardWillAnimate(isShowing: Bool, height: CGFloat) {
+    
+    print("keyboardWillAnimate \(isShowing)")
     guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
     
     let layoutGuideHeight = bottomLayoutGuide?.length ?? 0

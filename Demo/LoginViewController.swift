@@ -4,11 +4,12 @@ import UnderKeyboard
 
 class LoginViewController: UIViewController {
   @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
-  var underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
+  var underKeyboardLayoutConstraint: UnderKeyboardLayoutConstraint?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view,
+    underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
+    underKeyboardLayoutConstraint?.setup(bottomLayoutConstraint, view: view,
       bottomLayoutGuide: bottomLayoutGuide)
   }
   
