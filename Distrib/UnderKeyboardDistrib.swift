@@ -86,9 +86,18 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     
     if isShowing {
       let newConstantValue = correctedHeight + minMargin
-      if newConstantValue > bottomLayoutConstraint.constant {
+      
+      
+      if newConstantValue > initialConstraintConstant {
+        // Keyboard height is bigger than the initial constraint length.
+        // Increase constraint length.
         bottomLayoutConstraint.constant = newConstantValue
+      } else {
+        // Keyboard height is NOT bigger than the initial constraint length.
+        // Show the initial constraint length.
+        bottomLayoutConstraint.constant = initialConstraintConstant
       }
+      
     } else {
       bottomLayoutConstraint.constant = initialConstraintConstant
     }
