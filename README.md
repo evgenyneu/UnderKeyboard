@@ -60,7 +60,7 @@ override func viewDidLoad() {
 
 ### Using keyboard observer directly
 
-This library includes the `UnderKeyboardObserver` class that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. Your function will receive the height of the keyboard and whether it is shown or hidden.
+This library includes the `UnderKeyboardObserver` class that you can use to write your own custom logic. You can supply functions that will be called by this observer when the keyboard is shown and hidden. Your function will receive the height of the keyboard. The hight argument is zero if the keyboard is being hidden.
 
 ```Swift
 let keyboardObserver = UnderKeyboardObserver()
@@ -70,12 +70,12 @@ override func viewDidLoad() {
   keyboardObserver.start()
 
   // Called before the keyboard is animated
-  keyboardObserver.willAnimateKeyboard = { isShowing, height in
+  keyboardObserver.willAnimateKeyboard = { height in
     myConstraint.constant = height
   }
 
   // Called inside the UIView.animateWithDuration animations block
-  keyboardObserver.animateKeyboard = { isShowing, height in
+  keyboardObserver.animateKeyboard = { height in
     myView.layoutIfNeeded()
   }
 }

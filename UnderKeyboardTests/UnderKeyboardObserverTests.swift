@@ -17,12 +17,10 @@ class UnderKeyboardObserverTests: XCTestCase {
   func testCallsWillAnimateKeyboard_willShow() {
     obj.start()
     
-    var isShowingReceived: Bool?
     var heightReceived: CGFloat?
     var timesCalled = 0
     
-    obj.willAnimateKeyboard = { isShowing, height in
-      isShowingReceived = isShowing
+    obj.willAnimateKeyboard = { height in
       heightReceived = height
       timesCalled += 1
     }
@@ -30,19 +28,16 @@ class UnderKeyboardObserverTests: XCTestCase {
     postKeyboardWillShowNotification(CGSize(width: 18, height: 27))
     
     XCTAssertEqual(1, timesCalled)
-    XCTAssert(isShowingReceived!)
     XCTAssertEqual(27, heightReceived!)
   }
   
   func testCallsWillAnimateKeyboard_willHide() {
     obj.start()
     
-    var isShowingReceived: Bool?
     var heightReceived: CGFloat?
     var timesCalled = 0
     
-    obj.willAnimateKeyboard = { isShowing, height in
-      isShowingReceived = isShowing
+    obj.willAnimateKeyboard = { height in
       heightReceived = height
       timesCalled += 1
     }
@@ -50,7 +45,6 @@ class UnderKeyboardObserverTests: XCTestCase {
     postKeyboardWillHideNotification()
     
     XCTAssertEqual(1, timesCalled)
-    XCTAssertFalse(isShowingReceived!)
     XCTAssertEqual(0, heightReceived!)
   }
   
@@ -59,12 +53,10 @@ class UnderKeyboardObserverTests: XCTestCase {
   func testCallsAnimateKeyboard_willShow() {
     obj.start()
     
-    var isShowingReceived: Bool?
     var heightReceived: CGFloat?
     var timesCalled = 0
     
-    obj.animateKeyboard = { isShowing, height in
-      isShowingReceived = isShowing
+    obj.animateKeyboard = { height in
       heightReceived = height
       timesCalled += 1
     }
@@ -72,19 +64,16 @@ class UnderKeyboardObserverTests: XCTestCase {
     postKeyboardWillShowNotification(CGSize(width: 18, height: 27))
     
     XCTAssertEqual(1, timesCalled)
-    XCTAssert(isShowingReceived!)
     XCTAssertEqual(27, heightReceived!)
   }
   
   func testCallsAnimateKeyboard_willHide() {
     obj.start()
     
-    var isShowingReceived: Bool?
     var heightReceived: CGFloat?
     var timesCalled = 0
     
-    obj.animateKeyboard = { isShowing, height in
-      isShowingReceived = isShowing
+    obj.animateKeyboard = { height in
       heightReceived = height
       timesCalled += 1
     }
@@ -92,7 +81,6 @@ class UnderKeyboardObserverTests: XCTestCase {
     postKeyboardWillHideNotification()
     
     XCTAssertEqual(1, timesCalled)
-    XCTAssertFalse(isShowingReceived!)
     XCTAssertEqual(0, heightReceived!)
   }
   

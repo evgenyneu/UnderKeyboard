@@ -74,19 +74,18 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     if let currentKeyboardHeight = keyboardObserver.currentKeyboardHeight
       where currentKeyboardHeight > 0 {
         
-      keyboardWillAnimate(true, height: currentKeyboardHeight)
+      keyboardWillAnimate(currentKeyboardHeight)
     }
   }
   
-  func keyboardWillAnimate(isShowing: Bool, height: CGFloat) {
+  func keyboardWillAnimate(height: CGFloat) {
     guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
     
     let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
     let correctedHeight = height - layoutGuideHeight
     
-    if isShowing {
+    if height > 0 {
       let newConstantValue = correctedHeight + minMargin
-      
       
       if newConstantValue > initialConstraintConstant {
         // Keyboard height is bigger than the initial constraint length.
@@ -103,7 +102,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     }
   }
   
-  func animateKeyboard(isShowing: Bool, height: CGFloat) {
+  func animateKeyboard(height: CGFloat) {
     viewToAnimate?.layoutIfNeeded()
   }
 }
@@ -123,7 +122,7 @@ Detects appearance of software keyboard and calls the supplied closures that can
 
 */
 public final class UnderKeyboardObserver: NSObject {
-  public typealias AnimationCallback = (isShowing: Bool, height: CGFloat) -> ()
+  public typealias AnimationCallback = (height: CGFloat) -> ()
   
   let notificationCenter: NSNotificationCenter
   
@@ -169,13 +168,13 @@ public final class UnderKeyboardObserver: NSObject {
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
         
       let correctedHeight = isShowing ? height : 0
-      willAnimateKeyboard?(isShowing: isShowing, height: correctedHeight)
+      willAnimateKeyboard?(height: correctedHeight)
         
       UIView.animateWithDuration(duration,
         delay: NSTimeInterval(0),
         options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.unsignedLongValue),
         animations: { [weak self] in
-          self?.animateKeyboard?(isShowing: isShowing, height: correctedHeight)
+          self?.animateKeyboard?(height: correctedHeight)
         },
         completion: nil
       )
