@@ -24,14 +24,14 @@ Simply add [UnderKeyboardDistrib.swift](https://github.com/exchangegroup/UnderKe
 
 **Setup with Carthage (iOS 8+)**
 
-Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 3.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 4.0` to your Cartfile and run `carthage update`.
 
 **Setup with CocoaPods (iOS 8+)**
 
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
-    pod 'UnderKeyboard', '~> 3.0'
+    pod 'UnderKeyboard', '~> 4.0'
 
 
 ## Usage
