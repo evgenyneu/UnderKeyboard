@@ -12,7 +12,7 @@ It includes helper class for changing the length of a bottom Auto Layout constra
 This library is written in Swift 2.0 and requires Xcode 7.
 
 
-<img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
+<img src='https://raw.githubusercontent.com/marketplacer/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
 
 ## Setup
 
@@ -20,11 +20,11 @@ There are three ways you can add UnderKeyboard to your project.
 
 **Add source (iOS 7+)**
 
-Simply add [UnderKeyboardDistrib.swift](https://github.com/exchangegroup/UnderKeyboard/blob/master/Distrib/UnderKeyboardDistrib.swift) into your project.
+Simply add [UnderKeyboardDistrib.swift](https://github.com/marketplacer/UnderKeyboard/blob/master/Distrib/UnderKeyboardDistrib.swift) into your project.
 
 **Setup with Carthage (iOS 8+)**
 
-Alternatively, add `github "exchangegroup/UnderKeyboard" ~> 4.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/UnderKeyboard" ~> 4.0` to your Cartfile and run `carthage update`.
 
 **Setup with CocoaPods (iOS 8+)**
 
@@ -54,7 +54,7 @@ override func viewDidLoad() {
 }
 ```
 
-<img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='601'>
+<img src='https://raw.githubusercontent.com/marketplacer/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='601'>
 
 
 
@@ -110,4 +110,4 @@ UnderKeyboard is released under the [MIT License](LICENSE).
 
 
 ## 🐘
-<img src='https://raw.githubusercontent.com/exchangegroup/UnderKeyboard/master/Graphics/under_keyboard_creature.jpg' width='400' alt='Creature under the keyboard'>
+<img src='https://raw.githubusercontent.com/marketplacer/UnderKeyboard/master/Graphics/under_keyboard_creature.jpg' width='400' alt='Creature under the keyboard'>
