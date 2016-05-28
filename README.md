@@ -31,6 +31,7 @@ Alternatively, add `github "marketplacer/UnderKeyboard" ~> 4.0` to your Cartfile
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
+    target 'Your target name'
     pod 'UnderKeyboard', '~> 4.0'
 
 
