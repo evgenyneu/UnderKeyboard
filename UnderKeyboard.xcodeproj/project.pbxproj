@@ -26,6 +26,7 @@
 		2B8B89CC1B313FB00080CCE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8B89CB1B313FB00080CCE2 /* Main.storyboard */; };
 		2BD34DA51BB4B403000CD442 /* LargeTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD34DA41BB4B403000CD442 /* LargeTouchTarget.swift */; };
 		2BD34DA71BB4B431000CD442 /* TouchableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD34DA61BB4B431000CD442 /* TouchableTextField.swift */; };
+		7EBE25391D17D3D700FB8EA5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		2BD34DA41BB4B403000CD442 /* LargeTouchTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeTouchTarget.swift; sourceTree = "<group>"; };
 		2BD34DA61BB4B431000CD442 /* TouchableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableTextField.swift; sourceTree = "<group>"; };
 		7E5A5E2C1B4F8C9E0064A9FE /* UnderKeyboardDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardDistrib.swift; sourceTree = "<group>"; };
+		7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				2B8B89A81B313F820080CCE2 /* LaunchScreen.storyboard */,
 				2BD34DA61BB4B431000CD442 /* TouchableTextField.swift */,
 				2B8B89AB1B313F820080CCE2 /* Info.plist */,
+				7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				2B24A4DD1B4F5C7100FC7C7F /* LoginViewController.swift in Sources */,
 				2B8B89A21B313F820080CCE2 /* ScrollViewController.swift in Sources */,
 				2BD34DA51BB4B403000CD442 /* LargeTouchTarget.swift in Sources */,
+				7EBE25391D17D3D700FB8EA5 /* NavigationController.swift in Sources */,
 				2BD34DA71BB4B431000CD442 /* TouchableTextField.swift in Sources */,
 				2B8B89A01B313F820080CCE2 /* AppDelegate.swift in Sources */,
 			);
