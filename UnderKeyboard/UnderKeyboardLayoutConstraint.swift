@@ -45,7 +45,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
   
   */
-  public func setup(bottomLayoutConstraint: NSLayoutConstraint,
+  public func setup(_ bottomLayoutConstraint: NSLayoutConstraint,
     view: UIView, minMargin: CGFloat = 10,
     bottomLayoutGuide: UILayoutSupport? = nil) {
       
@@ -63,7 +63,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     }
   }
   
-  func keyboardWillAnimate(height: CGFloat) {
+  func keyboardWillAnimate(_ height: CGFloat) {
     guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
     
     let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
@@ -87,7 +87,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     }
   }
   
-  func animateKeyboard(height: CGFloat) {
+  func animateKeyboard(_ height: CGFloat) {
     viewToAnimate?.layoutIfNeeded()
   }
 }

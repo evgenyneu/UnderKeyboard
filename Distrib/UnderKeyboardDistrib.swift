@@ -60,7 +60,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
   
   */
-  public func setup(bottomLayoutConstraint: NSLayoutConstraint,
+  public func setup(_ bottomLayoutConstraint: NSLayoutConstraint,
     view: UIView, minMargin: CGFloat = 10,
     bottomLayoutGuide: UILayoutSupport? = nil) {
       
@@ -78,7 +78,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     }
   }
   
-  func keyboardWillAnimate(height: CGFloat) {
+  func keyboardWillAnimate(_ height: CGFloat) {
     guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
     
     let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
@@ -102,7 +102,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
     }
   }
   
-  func animateKeyboard(height: CGFloat) {
+  func animateKeyboard(_ height: CGFloat) {
     viewToAnimate?.layoutIfNeeded()
   }
 }
@@ -124,7 +124,7 @@ Detects appearance of software keyboard and calls the supplied closures that can
 public final class UnderKeyboardObserver: NSObject {
   public typealias AnimationCallback = (height: CGFloat) -> ()
   
-  let notificationCenter: NSNotificationCenter
+  let notificationCenter: NotificationCenter
   
   /// Function that will be called before the keyboard is shown and before animation is started.
   public var willAnimateKeyboard: AnimationCallback?
@@ -136,7 +136,7 @@ public final class UnderKeyboardObserver: NSObject {
   public var currentKeyboardHeight: CGFloat?
   
   public override init() {
-    notificationCenter = NSNotificationCenter.defaultCenter()
+    notificationCenter = NotificationCenter.default()
     super.init()
   }
   
@@ -148,8 +148,8 @@ public final class UnderKeyboardObserver: NSObject {
   public func start() {
     stop()
     
-    notificationCenter.addObserver(self, selector: Selector("keyboardNotification:"), name:UIKeyboardWillShowNotification, object: nil);
-    notificationCenter.addObserver(self, selector: Selector("keyboardNotification:"), name:UIKeyboardWillHideNotification, object: nil);
+    notificationCenter.addObserver(self, selector: #selector(UnderKeyboardObserver.keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+    notificationCenter.addObserver(self, selector: #selector(UnderKeyboardObserver.keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
   }
   
   /// Stop listening for keyboard notifications.
@@ -159,20 +159,20 @@ public final class UnderKeyboardObserver: NSObject {
   
   // MARK: - Notification
   
-  func keyboardNotification(notification: NSNotification) {
-    let isShowing = notification.name == UIKeyboardWillShowNotification
+  func keyboardNotification(_ notification: Notification) {
+    let isShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
     
-    if let userInfo = notification.userInfo,
-      let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue().height,
-      let duration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
+    if let userInfo = (notification as NSNotification).userInfo,
+      let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue().height,
+      let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
         
       let correctedHeight = isShowing ? height : 0
       willAnimateKeyboard?(height: correctedHeight)
         
-      UIView.animateWithDuration(duration,
-        delay: NSTimeInterval(0),
-        options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.unsignedLongValue),
+      UIView.animate(withDuration: duration,
+        delay: TimeInterval(0),
+        options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.uintValue),
         animations: { [weak self] in
           self?.animateKeyboard?(height: correctedHeight)
         },
