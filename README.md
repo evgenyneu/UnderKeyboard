@@ -13,7 +13,7 @@ It includes helper class for changing the length of a bottom Auto Layout constra
 
 <img src='https://raw.githubusercontent.com/marketplacer/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
 
-## Setup
+## Setup (Swift 3.0)
 
 There are three ways you can add UnderKeyboard to your project.
 
