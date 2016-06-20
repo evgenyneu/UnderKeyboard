@@ -15,6 +15,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   
   private var viewToAnimate: UIView?
   
+  /// Creates an instance of the class
   public override init() {
     super.init()
     

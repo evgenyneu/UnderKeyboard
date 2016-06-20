@@ -19,6 +19,7 @@ public final class UnderKeyboardObserver: NSObject {
   /// Current height of the keyboard. Has value `nil` if unknown.
   public var currentKeyboardHeight: CGFloat?
   
+  /// Creates an instance of the class
   public override init() {
     notificationCenter = NotificationCenter.default()
     super.init()
