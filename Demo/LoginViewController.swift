@@ -12,11 +12,11 @@ class LoginViewController: UIViewController {
       bottomLayoutGuide: bottomLayoutGuide)
   }
   
-  @IBAction func didTapCloseKeyboard(sender: AnyObject) {
+  @IBAction func didTapCloseKeyboard(_ sender: AnyObject) {
     view.endEditing(false)
   }
   
-  @IBAction func didTapLoginButton(sender: AnyObject) {
+  @IBAction func didTapLoginButton(_ sender: AnyObject) {
     view.endEditing(false)
   }
 }

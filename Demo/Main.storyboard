@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EdU-AM-PH0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EdU-AM-PH0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -15,35 +16,27 @@
                         <viewControllerLayoutGuide type="bottom" id="fIq-we-Lp6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xfb-B9-0xB">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-iG-88K">
-                                <rect key="frame" x="20" y="279" width="560" height="78"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWA-pq-yp5" customClass="TouchableTextField" customModule="Demo" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="13" width="530" height="17"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Br-Z5-0rK">
-                                        <rect key="frame" x="0.0" y="40" width="560" height="1"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.14800996129999999" green="0.02484939982" blue="0.16299715910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.14800996129999999" green="0.02484939982" blue="0.16299715910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="1ER-7o-YB9"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-cv-ejY" customClass="TouchableTextField" customModule="Demo" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="51" width="530" height="17"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7MX-cv-ejY" secondAttribute="trailing" constant="15" id="ANh-YK-LQS"/>
                                     <constraint firstItem="nWA-pq-yp5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="top" constant="13" id="AXp-pA-F0e"/>
@@ -58,27 +51,22 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-Mg-4L5">
-                                <rect key="frame" x="20" y="367" width="560" height="44"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.73938604797979801" green="0.32189971839302273" blue="0.25309860481230673" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.73938604797979801" green="0.32189971839302273" blue="0.25309860481230673" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapLoginButton:" destination="JGb-BS-J7U" eventType="touchUpInside" id="HOx-tA-spH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acK-ng-2sw">
-                                <rect key="frame" x="257" y="146" width="86" height="103"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="86"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.23137254901960785" green="0.039215686274509803" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.17321473360061646" green="0.008245464414358139" blue="0.19507455825805664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wRB-iG-88K" firstAttribute="top" secondItem="acK-ng-2sw" secondAttribute="bottom" constant="30" id="6QP-fK-6Wt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JOB-Mg-4L5" secondAttribute="trailing" id="Diy-aq-8hv"/>
@@ -93,7 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HLc-WH-sGb">
                         <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="pAe-Im-bjS">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapCloseKeyboard:" destination="JGb-BS-J7U" id="HHg-Sy-6nA"/>
                             </connections>
@@ -115,8 +103,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Nae-N8-CNL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="selectedImageTintColor" red="1" green="0.43921568630000002" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.98831707239151001" green="0.34536066651344299" blue="0.27348309755325317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="4XA-LO-3gZ" kind="relationship" relationship="viewControllers" id="6mB-VS-AzS"/>
@@ -136,13 +123,11 @@
                         <viewControllerLayoutGuide type="bottom" id="7TR-sD-YER"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fOe-If-0Hk">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="sts-RH-0Em">
-                                <rect key="frame" x="20" y="15" width="560" height="462"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.
 
 Native Americans have lived in the Yellowstone region for at least 11,000 years. The region was bypassed during the Lewis and Clark Expedition in the early 19th century. Aside from visits by mountain men during the early-to-mid-19th century, organized exploration did not begin until the late 1860s. The U.S. Army was commissioned to oversee the park just after its establishment. In 1917, administration of the park was transferred to the National Park Service, which had been created the previous year. Hundreds of structures have been built and are protected for their architectural and historical significance, and researchers have examined more than 1,000 archaeological sites.  Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.
@@ -152,13 +137,12 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
 Native Americans have lived in the Yellowstone region for at least 11,000 years. The region was bypassed during the Lewis and Clark Expedition in the early 19th century. Aside from visits by mountain men during the early-to-mid-19th century, organized exploration did not begin until the late 1860s. The U.S. Army was commissioned to oversee the park just after its establishment. In 1917, administration of the park was transferred to the National Park Service, which had been created the previous year. Hundreds of structures have been built and are protected for their architectural and historical significance, and researchers have examined more than 1,000 archaeological sites.  Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.
 
 Native Americans have lived in the Yellowstone region for at least 11,000 years. The region was bypassed during the Lewis and Clark Expedition in the early 19th century. Aside from visits by mountain men during the early-to-mid-19th century, organized exploration did not begin until the late 1860s. The U.S. Army was commissioned to oversee the park just after its establishment. In 1917, administration of the park was transferred to the National Park Service, which had been created the previous year. Hundreds of structures have been built and are protected for their architectural and historical significance, and researchers have examined more than 1,000 archaeological sites.</string>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="0.23137254901960785" green="0.039215686274509803" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.17321473360061646" green="0.008245464414358139" blue="0.19507455825805664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sts-RH-0Em" secondAttribute="trailing" id="225-4o-Cf1"/>
                             <constraint firstItem="sts-RH-0Em" firstAttribute="leading" secondItem="fOe-If-0Hk" secondAttribute="leadingMargin" id="2Sd-IJ-ORn"/>
@@ -168,7 +152,7 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                     </view>
                     <navigationItem key="navigationItem" id="xgf-2r-tZM">
                         <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="6ey-3x-ROS">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapCloseJKeyboard:" destination="bMX-L3-lVV" id="m0y-Pd-1Z4"/>
                             </connections>
@@ -186,14 +170,13 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
         <!--Login-->
         <scene sceneID="APU-CS-SW6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4XA-LO-3gZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4XA-LO-3gZ" customClass="NavigationController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Login" image="Login" id="sCr-9r-JGz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bEw-dY-v11">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -207,14 +190,13 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
         <!--Read-->
         <scene sceneID="gMY-J4-SmU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LTh-xO-3D7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LTh-xO-3D7" customClass="NavigationController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Read" image="Read" id="VoW-XA-e4A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z7C-ON-NCH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

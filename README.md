@@ -9,30 +9,34 @@
 
 This library helps moving your views when a keyboard appears and move them back in place when it hides.
 It includes helper class for changing the length of a bottom Auto Layout constraint.
-This library is written in Swift 2.0 and requires Xcode 7.
 
 
 <img src='https://raw.githubusercontent.com/marketplacer/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
 
-## Setup
+## Setup (Swift 3.0)
 
 There are three ways you can add UnderKeyboard to your project.
 
-**Add source (iOS 7+)**
+#### Add source (iOS 7+)
 
 Simply add [UnderKeyboardDistrib.swift](https://github.com/marketplacer/UnderKeyboard/blob/master/Distrib/UnderKeyboardDistrib.swift) into your project.
 
-**Setup with Carthage (iOS 8+)**
+#### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/UnderKeyboard" ~> 4.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/UnderKeyboard" ~> 5.0` to your Cartfile and run `carthage update`.
 
-**Setup with CocoaPods (iOS 8+)**
+#### Setup with CocoaPods (iOS 8+)
 
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'UnderKeyboard', '~> 4.0'
+    pod 'UnderKeyboard', '~> 5.0'
+
+
+#### Legacy Swift versions
+
+Setup a [previous version](https://github.com/marketplacer/UnderKeyboard/wiki/Legacy-Swift-versions) of the library if you use an older version of Swift.
 
 
 ## Usage
