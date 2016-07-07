@@ -13,7 +13,7 @@ It includes helper class for changing the length of a bottom Auto Layout constra
 
 <img src='https://raw.githubusercontent.com/marketplacer/UnderKeyboard/master/Graphics/under_keyboard_demo.gif' alt='Moving content from under the keyboard in iOS / Swift'>
 
-## Setup (Swift 3.0)
+## Setup (Swift 3.0 / Xcode 8 beta 2)
 
 There are three ways you can add UnderKeyboard to your project.
 
@@ -23,7 +23,7 @@ Simply add [UnderKeyboardDistrib.swift](https://github.com/marketplacer/UnderKey
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/UnderKeyboard" ~> 5.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/UnderKeyboard" ~> 6.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -31,7 +31,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'UnderKeyboard', '~> 5.0'
+    pod 'UnderKeyboard', '~> 6.0'
 
 
 #### Legacy Swift versions
