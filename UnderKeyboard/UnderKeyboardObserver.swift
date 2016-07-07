@@ -21,7 +21,7 @@ public final class UnderKeyboardObserver: NSObject {
   
   /// Creates an instance of the class
   public override init() {
-    notificationCenter = NotificationCenter.default()
+    notificationCenter = NotificationCenter.default
     super.init()
   }
   

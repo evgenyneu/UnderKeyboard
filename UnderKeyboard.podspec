@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name        = "UnderKeyboard"
-  s.version     = "5.0.1"
+  s.version     = "6.0.0"
   s.license     = { :type => "MIT" }
   s.homepage    = "https://github.com/marketplacer/UnderKeyboard"
   s.summary     = "An iOS / Swift libary for moving content from under the keyboard"
