@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    UITabBar.appearance().tintColor = UIColor.white()
+    UITabBar.appearance().tintColor = UIColor.white
     
-    UIApplication.shared().statusBarStyle = .lightContent
+    UIApplication.shared.statusBarStyle = .lightContent
     // Override point for customization after application launch.
     return true
   }
