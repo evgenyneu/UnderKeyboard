@@ -23,7 +23,7 @@ Simply add [UnderKeyboardDistrib.swift](https://github.com/marketplacer/UnderKey
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/UnderKeyboard" ~> 6.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/UnderKeyboard" ~> 7.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -31,7 +31,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'UnderKeyboard', '~> 6.0'
+    pod 'UnderKeyboard', git: 'https://github.com/marketplacer/UnderKeyboard.git', tag: '7.0.0'
 
 
 #### Legacy Swift versions
