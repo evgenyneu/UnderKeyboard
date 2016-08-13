@@ -73,7 +73,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
       
     // Keyboard is already open when setup is called
     if let currentKeyboardHeight = keyboardObserver.currentKeyboardHeight
-      where currentKeyboardHeight > 0 {
+      , currentKeyboardHeight > 0 {
         
       keyboardWillAnimate(currentKeyboardHeight)
     }
@@ -165,7 +165,7 @@ public final class UnderKeyboardObserver: NSObject {
     let isShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
     
     if let userInfo = (notification as NSNotification).userInfo,
-      let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue().height,
+      let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
       let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
         

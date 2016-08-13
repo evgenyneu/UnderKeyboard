@@ -58,7 +58,7 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
       
     // Keyboard is already open when setup is called
     if let currentKeyboardHeight = keyboardObserver.currentKeyboardHeight
-      where currentKeyboardHeight > 0 {
+      , currentKeyboardHeight > 0 {
         
       keyboardWillAnimate(currentKeyboardHeight)
     }
