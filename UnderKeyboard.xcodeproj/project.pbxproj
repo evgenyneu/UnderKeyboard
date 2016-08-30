@@ -17,7 +17,6 @@
 		2B24A4ED1B4F7BF300FC7C7F /* UnderKeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24A4E91B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift */; };
 		2B6F0F1A1B31441700DC6259 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B6F0F1B1B31441700DC6259 /* UnderKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B8B89871B313EE10080CCE2 /* UnderKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */; };
 		2B8B89A01B313F820080CCE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B899F1B313F820080CCE2 /* AppDelegate.swift */; };
 		2B8B89A21B313F820080CCE2 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B89A11B313F820080CCE2 /* ScrollViewController.swift */; };
@@ -26,6 +25,7 @@
 		2B8B89CC1B313FB00080CCE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8B89CB1B313FB00080CCE2 /* Main.storyboard */; };
 		2BD34DA51BB4B403000CD442 /* LargeTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD34DA41BB4B403000CD442 /* LargeTouchTarget.swift */; };
 		2BD34DA71BB4B431000CD442 /* TouchableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD34DA61BB4B431000CD442 /* TouchableTextField.swift */; };
+		463913E51D76467A0077D0E5 /* UnderKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E41D76467A0077D0E5 /* UnderKeyboard.swift */; };
 		7EBE25391D17D3D700FB8EA5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +68,6 @@
 		2B24A4E91B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		2B24A4EB1B4F7B8E00FC7C7F /* UnderKeyboardLayoutConstraintTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardLayoutConstraintTests.swift; sourceTree = "<group>"; };
 		2B8B897C1B313EE10080CCE2 /* UnderKeyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnderKeyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnderKeyboard.h; sourceTree = "<group>"; };
 		2B8B89811B313EE10080CCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B8B89861B313EE10080CCE2 /* UnderKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnderKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B898D1B313EE10080CCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		2B8B89CB1B313FB00080CCE2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2BD34DA41BB4B403000CD442 /* LargeTouchTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeTouchTarget.swift; sourceTree = "<group>"; };
 		2BD34DA61BB4B431000CD442 /* TouchableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchableTextField.swift; sourceTree = "<group>"; };
+		463913E41D76467A0077D0E5 /* UnderKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboard.swift; sourceTree = "<group>"; };
 		7E5A5E2C1B4F8C9E0064A9FE /* UnderKeyboardDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardDistrib.swift; sourceTree = "<group>"; };
 		7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,9 +144,9 @@
 		2B8B897E1B313EE10080CCE2 /* UnderKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				463913E41D76467A0077D0E5 /* UnderKeyboard.swift */,
 				2B24A4E91B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift */,
 				2B24A4D91B4F407F00FC7C7F /* UnderKeyboardObserver.swift */,
-				2B8B897F1B313EE10080CCE2 /* UnderKeyboard.h */,
 				2B8B89811B313EE10080CCE2 /* Info.plist */,
 			);
 			path = UnderKeyboard;
@@ -195,7 +195,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B8B89801B313EE10080CCE2 /* UnderKeyboard.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +355,7 @@
 			files = (
 				2B24A4DA1B4F407F00FC7C7F /* UnderKeyboardObserver.swift in Sources */,
 				2B24A4EA1B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift in Sources */,
+				463913E51D76467A0077D0E5 /* UnderKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
