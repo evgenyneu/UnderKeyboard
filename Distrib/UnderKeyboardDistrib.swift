@@ -9,6 +9,93 @@
 
 // ----------------------------
 //
+// DefaultListener.swift
+//
+// ----------------------------
+
+import Foundation
+
+protocol KeyboardNotificiationListener {
+    func newNotification(keyboardInfo: KeyboardInfo)
+}
+
+extension UnderKeyboard.DefaultObserver {
+    
+    class NotificationListener {
+        
+        var delegate: KeyboardNotificiationListener!
+        
+        private let keyboardNotifications = [
+            /*willShow:*/ NSNotification.Name.UIKeyboardWillShow,
+            /*didShow:*/ NSNotification.Name.UIKeyboardWillShow,
+            /*willHide:*/ NSNotification.Name.UIKeyboardWillHide,
+            /*didHide:*/ NSNotification.Name.UIKeyboardDidHide
+        ]
+        
+        init() {
+            assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
+            
+            keyboardNotifications.forEach { name in
+                NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
+                    let keyboardInfo = KeyboardInfo(notification: notification)
+                    self.delegate.newNotification(keyboardInfo: keyboardInfo)
+                }
+            }
+        }
+        
+        deinit {
+            NotificationCenter.default.removeObserver(self)
+        }
+    }
+    
+}
+
+
+// ----------------------------
+//
+// DefaultObserver.swift
+//
+// ----------------------------
+
+import UIKit
+
+extension UnderKeyboard.DefaultObserver {
+    
+}
+
+
+// ----------------------------
+//
+// KeyboardInfo.swift
+//
+// ----------------------------
+
+import UIKit
+
+struct KeyboardInfo {
+    
+    let animationDuration: Double
+    let animationCurve: UIViewAnimationOptions
+    
+    let frameBegin: CGRect
+    let frameEnd: CGRect
+    
+    init(notification: Notification) {
+        let userInfo = (notification as NSNotification).userInfo!
+        
+        self.animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
+        self.animationCurve = UIViewAnimationOptions(rawValue: UInt(rawAnimationCurve))
+                
+        self.frameBegin = ((userInfo[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue)!
+        self.frameEnd = ((userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue)!
+    }
+}
+
+
+// ----------------------------
+//
 // UnderKeyboard.swift
 //
 // ----------------------------
@@ -16,11 +103,44 @@
 import Foundation
 
 class UnderKeyboard {
+    
     static var useDefaultImplementationIfNoneProvided: Bool = false {
         didSet {
-            if newValue {} else {}
+            switch (oldValue, useDefaultImplementationIfNoneProvided) {
+            case (false, true):
+                UnderKeyboard.sharedDefaultObserver = DefaultObserver()
+            case (true, false):
+                UnderKeyboard.sharedDefaultObserver = nil
+            case (true, true), (false, false):
+                break
+            }
         }
     }
+    
+    private static var sharedDefaultObserver: DefaultObserver?
+    
+    class DefaultObserver {
+        
+        private let notificationListener: NotificationListener
+        init() {
+            assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
+         
+            self.notificationListener = NotificationListener()
+            self.notificationListener.delegate = self // I dont like that this is a delegate. I'd rather use Rx, but I don't want to import a 3rd party dependency.
+        }
+        
+        deinit {}
+        
+    }
+    
+}
+
+extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
+    
+    func newNotification(keyboardInfo: KeyboardInfo) {
+        
+    }
+    
 }
 
 
@@ -42,7 +162,7 @@ extension UnderKeyboard {
     @objc public class LayoutConstraint: NSObject {
         private weak var bottomLayoutConstraint: NSLayoutConstraint?
         private weak var bottomLayoutGuide: UILayoutSupport?
-        private var keyboardObserver = UnderKeyboardObserver()
+        private var keyboardObserver = UnderKeyboard.Observer()
         private var initialConstraintConstant: CGFloat = 0
         private var minMargin: CGFloat = 10
         

@@ -10,7 +10,7 @@ extension UnderKeyboard {
     @objc public class LayoutConstraint: NSObject {
         private weak var bottomLayoutConstraint: NSLayoutConstraint?
         private weak var bottomLayoutGuide: UILayoutSupport?
-        private var keyboardObserver = UnderKeyboardObserver()
+        private var keyboardObserver = UnderKeyboard.Observer()
         private var initialConstraintConstant: CGFloat = 0
         private var minMargin: CGFloat = 10
         
