@@ -30,13 +30,3 @@ class UnderKeyboard {
     }
     
 }
-
-extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
-    
-    func newNotification(keyboardInfo: KeyboardInfo) {
-        // do bad side effecty things here
-        assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
-
-    }
-    
-}

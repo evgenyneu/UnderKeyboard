@@ -1,7 +1,7 @@
 import Foundation
 
 protocol KeyboardNotificiationListener {
-    func newNotification(keyboardInfo: KeyboardInfo)
+    func newNotification(notification: KeyboardNotification)
 }
 
 extension UnderKeyboard.DefaultObserver {
@@ -12,7 +12,7 @@ extension UnderKeyboard.DefaultObserver {
         
         private let keyboardNotifications = [
             /*willShow:*/ NSNotification.Name.UIKeyboardWillShow,
-            /*didShow:*/ NSNotification.Name.UIKeyboardWillShow,
+            /*didShow:*/ NSNotification.Name.UIKeyboardDidShow,
             /*willHide:*/ NSNotification.Name.UIKeyboardWillHide,
             /*didHide:*/ NSNotification.Name.UIKeyboardDidHide
         ]
@@ -20,8 +20,8 @@ extension UnderKeyboard.DefaultObserver {
         init() {            
             keyboardNotifications.forEach { name in
                 NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
-                    let keyboardInfo = KeyboardInfo(notification: notification)
-                    self.delegate.newNotification(keyboardInfo: keyboardInfo)
+                    let keyboardInfo = KeyboardNotification(notification: notification)
+                    self.delegate.newNotification(notification: keyboardInfo)
                 }
             }
         }

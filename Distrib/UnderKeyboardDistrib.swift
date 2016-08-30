@@ -16,7 +16,7 @@
 import Foundation
 
 protocol KeyboardNotificiationListener {
-    func newNotification(keyboardInfo: KeyboardInfo)
+    func newNotification(notification: KeyboardNotification)
 }
 
 extension UnderKeyboard.DefaultObserver {
@@ -27,18 +27,16 @@ extension UnderKeyboard.DefaultObserver {
         
         private let keyboardNotifications = [
             /*willShow:*/ NSNotification.Name.UIKeyboardWillShow,
-            /*didShow:*/ NSNotification.Name.UIKeyboardWillShow,
+            /*didShow:*/ NSNotification.Name.UIKeyboardDidShow,
             /*willHide:*/ NSNotification.Name.UIKeyboardWillHide,
             /*didHide:*/ NSNotification.Name.UIKeyboardDidHide
         ]
         
-        init() {
-            assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
-            
+        init() {            
             keyboardNotifications.forEach { name in
                 NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
-                    let keyboardInfo = KeyboardInfo(notification: notification)
-                    self.delegate.newNotification(keyboardInfo: keyboardInfo)
+                    let keyboardInfo = KeyboardNotification(notification: notification)
+                    self.delegate.newNotification(notification: keyboardInfo)
                 }
             }
         }
@@ -59,20 +57,39 @@ extension UnderKeyboard.DefaultObserver {
 
 import UIKit
 
-extension UnderKeyboard.DefaultObserver {
+extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
+    
+    func newNotification(notification: KeyboardNotification) {
+        assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
+
+        // do bad side effecty things here with UIScreen.main
+        switch notification.name {
+        case .willShow:
+            break
+        case .didShow:
+            break
+        case .willHide:
+            break
+        case .didHide:
+            break
+        default:
+            assertionFailure()
+        }
+    }
     
 }
 
 
 // ----------------------------
 //
-// KeyboardInfo.swift
+// KeyboardNotification.swift
 //
 // ----------------------------
 
 import UIKit
 
-struct KeyboardInfo {
+struct KeyboardNotification {
+    let name: NSNotification.Name
     
     let animationDuration: Double
     let animationCurve: UIViewAnimationOptions
@@ -83,6 +100,8 @@ struct KeyboardInfo {
     init(notification: Notification) {
         let userInfo = (notification as NSNotification).userInfo!
         
+        self.name = notification.name
+        
         self.animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         
         let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
@@ -90,6 +109,39 @@ struct KeyboardInfo {
                 
         self.frameBegin = ((userInfo[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue)!
         self.frameEnd = ((userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue)!
+    }
+}
+
+extension KeyboardNotification {
+    enum Name {
+        case willShow
+        case didShow
+        case willHide
+        case didHide
+        
+        init?(notificationName: NSNotification.Name) {
+            guard let name = Name.nsNotificationToKeyboardNotification(notificationName: notificationName) else {
+                return nil
+            }
+            self = name
+        }
+    }
+}
+
+extension KeyboardNotification.Name {
+    static func nsNotificationToKeyboardNotification(notificationName: NSNotification.Name) -> KeyboardNotification.Name? {
+        switch notificationName {
+        case NSNotification.Name.UIKeyboardWillShow:
+            return .willShow
+        case NSNotification.Name.UIKeyboardDidShow:
+            return .didShow
+        case NSNotification.Name.UIKeyboardWillHide:
+            return .willHide
+        case NSNotification.Name.UIKeyboardDidHide:
+            return .didHide
+        default:
+            return nil
+        }
     }
 }
 
@@ -123,21 +175,11 @@ class UnderKeyboard {
         
         private let notificationListener: NotificationListener
         init() {
-            assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
-         
             self.notificationListener = NotificationListener()
             self.notificationListener.delegate = self // I dont like that this is a delegate. I'd rather use Rx, but I don't want to import a 3rd party dependency.
         }
         
         deinit {}
-        
-    }
-    
-}
-
-extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
-    
-    func newNotification(keyboardInfo: KeyboardInfo) {
         
     }
     
