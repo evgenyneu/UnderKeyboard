@@ -29,6 +29,7 @@
 		463913E71D76478D0077D0E5 /* DefaultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E61D76478D0077D0E5 /* DefaultObserver.swift */; };
 		463913E91D764C1B0077D0E5 /* DefaultListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913E81D764C1B0077D0E5 /* DefaultListener.swift */; };
 		463913EB1D764C4B0077D0E5 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463913EA1D764C4B0077D0E5 /* KeyboardNotification.swift */; };
+		46FC24CA1D765514009640F7 /* TextFieldNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC24C91D765514009640F7 /* TextFieldNotification.swift */; };
 		7EBE25391D17D3D700FB8EA5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		463913E61D76478D0077D0E5 /* DefaultObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultObserver.swift; sourceTree = "<group>"; };
 		463913E81D764C1B0077D0E5 /* DefaultListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultListener.swift; sourceTree = "<group>"; };
 		463913EA1D764C4B0077D0E5 /* KeyboardNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
+		46FC24C91D765514009640F7 /* TextFieldNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldNotification.swift; sourceTree = "<group>"; };
 		7E5A5E2C1B4F8C9E0064A9FE /* UnderKeyboardDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderKeyboardDistrib.swift; sourceTree = "<group>"; };
 		7EBE25381D17D3D700FB8EA5 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 				463913E61D76478D0077D0E5 /* DefaultObserver.swift */,
 				463913E81D764C1B0077D0E5 /* DefaultListener.swift */,
 				463913EA1D764C4B0077D0E5 /* KeyboardNotification.swift */,
+				46FC24C91D765514009640F7 /* TextFieldNotification.swift */,
 			);
 			name = "Default Implementation";
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			files = (
 				463913EB1D764C4B0077D0E5 /* KeyboardNotification.swift in Sources */,
 				2B24A4DA1B4F407F00FC7C7F /* UnderKeyboardObserver.swift in Sources */,
+				46FC24CA1D765514009640F7 /* TextFieldNotification.swift in Sources */,
 				463913E91D764C1B0077D0E5 /* DefaultListener.swift in Sources */,
 				463913E71D76478D0077D0E5 /* DefaultObserver.swift in Sources */,
 				2B24A4EA1B4F78E400FC7C7F /* UnderKeyboardLayoutConstraint.swift in Sources */,

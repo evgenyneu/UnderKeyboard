@@ -18,7 +18,7 @@ struct KeyboardNotification {
         
         let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
         self.animationCurve = UIViewAnimationOptions(rawValue: UInt(rawAnimationCurve))
-                
+        
         self.frameBegin = ((userInfo[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue)!
         self.frameEnd = ((userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue)!
     }
@@ -30,29 +30,29 @@ extension KeyboardNotification {
         case didShow
         case willHide
         case didHide
-        
-        init?(notificationName: NSNotification.Name) {
-            guard let name = Name.nsNotificationToKeyboardNotification(notificationName: notificationName) else {
-                return nil
-            }
-            self = name
-        }
     }
 }
 
 extension KeyboardNotification.Name {
-    static func nsNotificationToKeyboardNotification(notificationName: NSNotification.Name) -> KeyboardNotification.Name? {
-        switch notificationName {
-        case NSNotification.Name.UIKeyboardWillShow:
-            return .willShow
-        case NSNotification.Name.UIKeyboardDidShow:
-            return .didShow
-        case NSNotification.Name.UIKeyboardWillHide:
-            return .willHide
-        case NSNotification.Name.UIKeyboardDidHide:
-            return .didHide
-        default:
+    init?(notificationName: NSNotification.Name) {
+        let mapping: (NSNotification.Name) -> KeyboardNotification.Name? = { name in
+            switch name {
+            case NSNotification.Name.UIKeyboardWillShow:
+                return .willShow
+            case NSNotification.Name.UIKeyboardDidShow:
+                return .didShow
+            case NSNotification.Name.UIKeyboardWillHide:
+                return .willHide
+            case NSNotification.Name.UIKeyboardDidHide:
+                return .didHide
+            default:
+                return nil
+            }
+        }
+        
+        guard let name = mapping(notificationName) else {
             return nil
         }
+        self = name
     }
 }

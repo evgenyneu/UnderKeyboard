@@ -17,6 +17,7 @@ import Foundation
 
 protocol KeyboardNotificiationListener {
     func newNotification(notification: KeyboardNotification)
+    func newNotification(notification: TextFieldNotification)
 }
 
 extension UnderKeyboard.DefaultObserver {
@@ -25,17 +26,30 @@ extension UnderKeyboard.DefaultObserver {
         
         var delegate: KeyboardNotificiationListener!
         
-        private let keyboardNotifications = [
+        private let keyboardNotificationNames = [
             /*willShow:*/ NSNotification.Name.UIKeyboardWillShow,
             /*didShow:*/ NSNotification.Name.UIKeyboardDidShow,
             /*willHide:*/ NSNotification.Name.UIKeyboardWillHide,
             /*didHide:*/ NSNotification.Name.UIKeyboardDidHide
         ]
         
+        private let textFieldNotificationNames = [
+            /*beganEditing:*/ NSNotification.Name.UITextFieldTextDidBeginEditing,
+            /*changed:*/ NSNotification.Name.UITextFieldTextDidChange,
+            /*endedEditing:*/ NSNotification.Name.UITextFieldTextDidEndEditing,
+        ]
+        
         init() {            
-            keyboardNotifications.forEach { name in
+            keyboardNotificationNames.forEach { name in
                 NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
                     let keyboardInfo = KeyboardNotification(notification: notification)
+                    self.delegate.newNotification(notification: keyboardInfo)
+                }
+            }
+            
+            textFieldNotificationNames.forEach { name in
+                NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
+                    let keyboardInfo = TextFieldNotification(notification: notification)
                     self.delegate.newNotification(notification: keyboardInfo)
                 }
             }
@@ -72,9 +86,22 @@ extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
             break
         case .didHide:
             break
-        default:
-            assertionFailure()
         }
+    }
+    
+    func newNotification(notification: TextFieldNotification) {
+        assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
+        
+        // or maybe do the side effecty things here for now?
+        switch notification.name {
+        case .beganEditing:
+            break
+        case .changed:
+            break
+        case .endedEditing:
+            break
+        }
+        
     }
     
 }
@@ -89,7 +116,7 @@ extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
 import UIKit
 
 struct KeyboardNotification {
-    let name: NSNotification.Name
+    let name: Name
     
     let animationDuration: Double
     let animationCurve: UIViewAnimationOptions
@@ -100,13 +127,13 @@ struct KeyboardNotification {
     init(notification: Notification) {
         let userInfo = (notification as NSNotification).userInfo!
         
-        self.name = notification.name
+        self.name = Name(notificationName: notification.name)!
         
         self.animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         
         let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
         self.animationCurve = UIViewAnimationOptions(rawValue: UInt(rawAnimationCurve))
-                
+        
         self.frameBegin = ((userInfo[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue)!
         self.frameEnd = ((userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue)!
     }
@@ -118,30 +145,77 @@ extension KeyboardNotification {
         case didShow
         case willHide
         case didHide
-        
-        init?(notificationName: NSNotification.Name) {
-            guard let name = Name.nsNotificationToKeyboardNotification(notificationName: notificationName) else {
-                return nil
-            }
-            self = name
-        }
     }
 }
 
 extension KeyboardNotification.Name {
-    static func nsNotificationToKeyboardNotification(notificationName: NSNotification.Name) -> KeyboardNotification.Name? {
-        switch notificationName {
-        case NSNotification.Name.UIKeyboardWillShow:
-            return .willShow
-        case NSNotification.Name.UIKeyboardDidShow:
-            return .didShow
-        case NSNotification.Name.UIKeyboardWillHide:
-            return .willHide
-        case NSNotification.Name.UIKeyboardDidHide:
-            return .didHide
-        default:
+    init?(notificationName: NSNotification.Name) {
+        let mapping: (NSNotification.Name) -> KeyboardNotification.Name? = { name in
+            switch name {
+            case NSNotification.Name.UIKeyboardWillShow:
+                return .willShow
+            case NSNotification.Name.UIKeyboardDidShow:
+                return .didShow
+            case NSNotification.Name.UIKeyboardWillHide:
+                return .willHide
+            case NSNotification.Name.UIKeyboardDidHide:
+                return .didHide
+            default:
+                return nil
+            }
+        }
+        
+        guard let name = mapping(notificationName) else {
             return nil
         }
+        self = name
+    }
+}
+
+
+// ----------------------------
+//
+// TextFieldNotification.swift
+//
+// ----------------------------
+
+import UIKit
+
+struct TextFieldNotification {
+    let name: Name
+    
+    init(notification: Notification) {
+        self.name = Name(notificationName: notification.name)!
+    }
+}
+
+extension TextFieldNotification {
+    enum Name {
+        case beganEditing
+        case changed
+        case endedEditing
+    }
+}
+
+extension TextFieldNotification.Name {
+    init?(notificationName: NSNotification.Name) {
+        let mapping: (NSNotification.Name) -> TextFieldNotification.Name? = { name in
+            switch name {
+            case NSNotification.Name.UITextFieldTextDidBeginEditing:
+                return .beganEditing
+            case NSNotification.Name.UITextFieldTextDidChange:
+                return .changed
+            case NSNotification.Name.UITextFieldTextDidEndEditing:
+                return .endedEditing
+            default:
+                return nil
+            }
+        }
+        
+        guard let name = mapping(notificationName) else {
+            return nil
+        }
+        self = name
     }
 }
 
