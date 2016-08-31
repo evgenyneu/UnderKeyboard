@@ -9,6 +9,259 @@
 
 // ----------------------------
 //
+// DefaultListener.swift
+//
+// ----------------------------
+
+import Foundation
+
+protocol KeyboardNotificiationListener {
+    func newNotification(notification: KeyboardNotification)
+    func newNotification(notification: TextFieldNotification)
+}
+
+extension UnderKeyboard.DefaultObserver {
+    
+    class NotificationListener {
+        
+        var delegate: KeyboardNotificiationListener!
+        
+        private let keyboardNotificationNames = [
+            /*willShow:*/ NSNotification.Name.UIKeyboardWillShow,
+            /*didShow:*/ NSNotification.Name.UIKeyboardDidShow,
+            /*willHide:*/ NSNotification.Name.UIKeyboardWillHide,
+            /*didHide:*/ NSNotification.Name.UIKeyboardDidHide
+        ]
+        
+        private let textFieldNotificationNames = [
+            /*beganEditing:*/ NSNotification.Name.UITextFieldTextDidBeginEditing,
+            /*changed:*/ NSNotification.Name.UITextFieldTextDidChange,
+            /*endedEditing:*/ NSNotification.Name.UITextFieldTextDidEndEditing,
+        ]
+        
+        init() {            
+            keyboardNotificationNames.forEach { name in
+                NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
+                    let keyboardInfo = KeyboardNotification(notification: notification)
+                    self.delegate.newNotification(notification: keyboardInfo)
+                }
+            }
+            
+            textFieldNotificationNames.forEach { name in
+                NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { notification in
+                    let keyboardInfo = TextFieldNotification(notification: notification)
+                    self.delegate.newNotification(notification: keyboardInfo)
+                }
+            }
+        }
+        
+        deinit {
+            NotificationCenter.default.removeObserver(self)
+        }
+    }
+    
+}
+
+
+// ----------------------------
+//
+// DefaultObserver.swift
+//
+// ----------------------------
+
+import UIKit
+
+extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
+    
+    func newNotification(notification: KeyboardNotification) {
+        assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
+
+        // do bad side effecty things here with UIScreen.main
+        switch notification.name {
+        case .willShow:
+            break
+        case .didShow:
+            break
+        case .willHide:
+            break
+        case .didHide:
+            break
+        }
+    }
+    
+    func newNotification(notification: TextFieldNotification) {
+        assert(UnderKeyboard.useDefaultImplementationIfNoneProvided) // remove this after this is merged into marketplacer/UnderKeyboard
+        
+        // or maybe do the side effecty things here for now?
+        switch notification.name {
+        case .beganEditing:
+            break
+        case .changed:
+            break
+        case .endedEditing:
+            break
+        }
+        
+    }
+    
+}
+
+
+// ----------------------------
+//
+// KeyboardNotification.swift
+//
+// ----------------------------
+
+import UIKit
+
+struct KeyboardNotification {
+    let name: Name
+    
+    let animationDuration: Double
+    let animationCurve: UIViewAnimationOptions
+    
+    let frameBegin: CGRect
+    let frameEnd: CGRect
+    
+    init(notification: Notification) {
+        let userInfo = (notification as NSNotification).userInfo!
+        
+        self.name = Name(notificationName: notification.name)!
+        
+        self.animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        let rawAnimationCurve = (userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).uint32Value << 16
+        self.animationCurve = UIViewAnimationOptions(rawValue: UInt(rawAnimationCurve))
+        
+        self.frameBegin = ((userInfo[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue)!
+        self.frameEnd = ((userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue)!
+    }
+}
+
+extension KeyboardNotification {
+    enum Name {
+        case willShow
+        case didShow
+        case willHide
+        case didHide
+    }
+}
+
+extension KeyboardNotification.Name {
+    init?(notificationName: NSNotification.Name) {
+        let mapping: (NSNotification.Name) -> KeyboardNotification.Name? = { name in
+            switch name {
+            case NSNotification.Name.UIKeyboardWillShow:
+                return .willShow
+            case NSNotification.Name.UIKeyboardDidShow:
+                return .didShow
+            case NSNotification.Name.UIKeyboardWillHide:
+                return .willHide
+            case NSNotification.Name.UIKeyboardDidHide:
+                return .didHide
+            default:
+                return nil
+            }
+        }
+        
+        guard let name = mapping(notificationName) else {
+            return nil
+        }
+        self = name
+    }
+}
+
+
+// ----------------------------
+//
+// TextFieldNotification.swift
+//
+// ----------------------------
+
+import UIKit
+
+struct TextFieldNotification {
+    let name: Name
+    
+    init(notification: Notification) {
+        self.name = Name(notificationName: notification.name)!
+    }
+}
+
+extension TextFieldNotification {
+    enum Name {
+        case beganEditing
+        case changed
+        case endedEditing
+    }
+}
+
+extension TextFieldNotification.Name {
+    init?(notificationName: NSNotification.Name) {
+        let mapping: (NSNotification.Name) -> TextFieldNotification.Name? = { name in
+            switch name {
+            case NSNotification.Name.UITextFieldTextDidBeginEditing:
+                return .beganEditing
+            case NSNotification.Name.UITextFieldTextDidChange:
+                return .changed
+            case NSNotification.Name.UITextFieldTextDidEndEditing:
+                return .endedEditing
+            default:
+                return nil
+            }
+        }
+        
+        guard let name = mapping(notificationName) else {
+            return nil
+        }
+        self = name
+    }
+}
+
+
+// ----------------------------
+//
+// UnderKeyboard.swift
+//
+// ----------------------------
+
+import Foundation
+
+class UnderKeyboard {
+    
+    static var useDefaultImplementationIfNoneProvided: Bool = false {
+        didSet {
+            switch (oldValue, useDefaultImplementationIfNoneProvided) {
+            case (false, true):
+                UnderKeyboard.sharedDefaultObserver = DefaultObserver()
+            case (true, false):
+                UnderKeyboard.sharedDefaultObserver = nil
+            case (true, true), (false, false):
+                break
+            }
+        }
+    }
+    
+    private static var sharedDefaultObserver: DefaultObserver?
+    
+    class DefaultObserver {
+        
+        private let notificationListener: NotificationListener
+        init() {
+            self.notificationListener = NotificationListener()
+            self.notificationListener.delegate = self // I dont like that this is a delegate. I'd rather use Rx, but I don't want to import a 3rd party dependency.
+        }
+        
+        deinit {}
+        
+    }
+    
+}
+
+
+// ----------------------------
+//
 // UnderKeyboardLayoutConstraint.swift
 //
 // ----------------------------
@@ -17,95 +270,97 @@ import UIKit
 
 
 /**
-
-Adjusts the length (constant value) of the bottom layout constraint when keyboard shows and hides.
-
-*/
-@objc public class UnderKeyboardLayoutConstraint: NSObject {
-  private weak var bottomLayoutConstraint: NSLayoutConstraint?
-  private weak var bottomLayoutGuide: UILayoutSupport?
-  private var keyboardObserver = UnderKeyboardObserver()
-  private var initialConstraintConstant: CGFloat = 0
-  private var minMargin: CGFloat = 10
-  
-  private var viewToAnimate: UIView?
-  
-  /// Creates an instance of the class
-  public override init() {
-    super.init()
-    
-    keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
-    keyboardObserver.animateKeyboard = animateKeyboard
-    keyboardObserver.start()
-  }
-  
-  deinit {
-    stop()
-  }
-  
-  /// Stop listening for keyboard notifications.
-  public func stop() {
-    keyboardObserver.stop()
-  }
-  
-  /**
-  
-  Supply a bottom Auto Layout constraint. Its constant value will be adjusted by the height of the keyboard when it appears and hides.
-  
-  - parameter bottomLayoutConstraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
-  
-  - parameter view: Supply a view that will be used to animate the constraint. It is usually the superview containing the view with the constraint.
-  
-  - parameter minMargin: Specify the minimum margin between the keyboard and the bottom of the view the constraint is attached to. Default: 10.
-  
-  - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
-  
-  */
-  public func setup(_ bottomLayoutConstraint: NSLayoutConstraint,
-    view: UIView, minMargin: CGFloat = 10,
-    bottomLayoutGuide: UILayoutSupport? = nil) {
-      
-    initialConstraintConstant = bottomLayoutConstraint.constant
-    self.bottomLayoutConstraint = bottomLayoutConstraint
-    self.minMargin = minMargin
-    self.bottomLayoutGuide = bottomLayoutGuide
-    self.viewToAnimate = view
-      
-    // Keyboard is already open when setup is called
-    if let currentKeyboardHeight = keyboardObserver.currentKeyboardHeight
-      , currentKeyboardHeight > 0 {
+ 
+ Adjusts the length (constant value) of the bottom layout constraint when keyboard shows and hides.
+ 
+ */
+extension UnderKeyboard {
+    @objc public class LayoutConstraint: NSObject {
+        private weak var bottomLayoutConstraint: NSLayoutConstraint?
+        private weak var bottomLayoutGuide: UILayoutSupport?
+        private var keyboardObserver = UnderKeyboard.Observer()
+        private var initialConstraintConstant: CGFloat = 0
+        private var minMargin: CGFloat = 10
         
-      keyboardWillAnimate(currentKeyboardHeight)
+        private var viewToAnimate: UIView?
+        
+        /// Creates an instance of the class
+        public override init() {
+            super.init()
+            
+            keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
+            keyboardObserver.animateKeyboard = animateKeyboard
+            keyboardObserver.start()
+        }
+        
+        deinit {
+            stop()
+        }
+        
+        /// Stop listening for keyboard notifications.
+        public func stop() {
+            keyboardObserver.stop()
+        }
+        
+        /**
+         
+         Supply a bottom Auto Layout constraint. Its constant value will be adjusted by the height of the keyboard when it appears and hides.
+         
+         - parameter bottomLayoutConstraint: Supply a bottom layout constraint. Its constant value will be adjusted when keyboard is shown and hidden.
+         
+         - parameter view: Supply a view that will be used to animate the constraint. It is usually the superview containing the view with the constraint.
+         
+         - parameter minMargin: Specify the minimum margin between the keyboard and the bottom of the view the constraint is attached to. Default: 10.
+         
+         - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
+         
+         */
+        public func setup(_ bottomLayoutConstraint: NSLayoutConstraint,
+                          view: UIView, minMargin: CGFloat = 10,
+                          bottomLayoutGuide: UILayoutSupport? = nil) {
+            
+            initialConstraintConstant = bottomLayoutConstraint.constant
+            self.bottomLayoutConstraint = bottomLayoutConstraint
+            self.minMargin = minMargin
+            self.bottomLayoutGuide = bottomLayoutGuide
+            self.viewToAnimate = view
+            
+            // Keyboard is already open when setup is called
+            if let currentKeyboardHeight = keyboardObserver.currentKeyboardHeight
+                , currentKeyboardHeight > 0 {
+                
+                keyboardWillAnimate(currentKeyboardHeight)
+            }
+        }
+        
+        func keyboardWillAnimate(_ height: CGFloat) {
+            guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
+            
+            let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
+            let correctedHeight = height - layoutGuideHeight
+            
+            if height > 0 {
+                let newConstantValue = correctedHeight + minMargin
+                
+                if newConstantValue > initialConstraintConstant {
+                    // Keyboard height is bigger than the initial constraint length.
+                    // Increase constraint length.
+                    bottomLayoutConstraint.constant = newConstantValue
+                } else {
+                    // Keyboard height is NOT bigger than the initial constraint length.
+                    // Show the initial constraint length.
+                    bottomLayoutConstraint.constant = initialConstraintConstant
+                }
+                
+            } else {
+                bottomLayoutConstraint.constant = initialConstraintConstant
+            }
+        }
+        
+        func animateKeyboard(_ height: CGFloat) {
+            viewToAnimate?.layoutIfNeeded()
+        }
     }
-  }
-  
-  func keyboardWillAnimate(_ height: CGFloat) {
-    guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
-    
-    let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
-    let correctedHeight = height - layoutGuideHeight
-    
-    if height > 0 {
-      let newConstantValue = correctedHeight + minMargin
-      
-      if newConstantValue > initialConstraintConstant {
-        // Keyboard height is bigger than the initial constraint length.
-        // Increase constraint length.
-        bottomLayoutConstraint.constant = newConstantValue
-      } else {
-        // Keyboard height is NOT bigger than the initial constraint length.
-        // Show the initial constraint length.
-        bottomLayoutConstraint.constant = initialConstraintConstant
-      }
-      
-    } else {
-      bottomLayoutConstraint.constant = initialConstraintConstant
-    }
-  }
-  
-  func animateKeyboard(_ height: CGFloat) {
-    viewToAnimate?.layoutIfNeeded()
-  }
 }
 
 
@@ -118,72 +373,74 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
 import UIKit
 
 /**
-
-Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and moving view from under the keyboard.
-
-*/
-public final class UnderKeyboardObserver: NSObject {
-  public typealias AnimationCallback = (_ height: CGFloat) -> ()
-  
-  let notificationCenter: NotificationCenter
-  
-  /// Function that will be called before the keyboard is shown and before animation is started.
-  public var willAnimateKeyboard: AnimationCallback?
-  
-  /// Function that will be called inside the animation block. This can be used to call `layoutIfNeeded` on the view.
-  public var animateKeyboard: AnimationCallback?
-  
-  /// Current height of the keyboard. Has value `nil` if unknown.
-  public var currentKeyboardHeight: CGFloat?
-  
-  /// Creates an instance of the class
-  public override init() {
-    notificationCenter = NotificationCenter.default
-    super.init()
-  }
-  
-  deinit {
-    stop()
-  }
-  
-  /// Start listening for keyboard notifications.
-  public func start() {
-    stop()
-    
-    notificationCenter.addObserver(self, selector: #selector(UnderKeyboardObserver.keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
-    notificationCenter.addObserver(self, selector: #selector(UnderKeyboardObserver.keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
-  }
-  
-  /// Stop listening for keyboard notifications.
-  public func stop() {
-    notificationCenter.removeObserver(self)
-  }
-  
-  // MARK: - Notification
-  
-  func keyboardNotification(_ notification: Notification) {
-    let isShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
-    
-    if let userInfo = (notification as NSNotification).userInfo,
-      let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
-      let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
-      let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
+ 
+ Detects appearance of software keyboard and calls the supplied closures that can be used for changing the layout and moving view from under the keyboard.
+ 
+ */
+extension UnderKeyboard {
+    public final class Observer: NSObject {
+        public typealias AnimationCallback = (_ height: CGFloat) -> ()
         
-      let correctedHeight = isShowing ? height : 0
-      willAnimateKeyboard?(correctedHeight)
+        let notificationCenter: NotificationCenter
         
-      UIView.animate(withDuration: duration,
-        delay: TimeInterval(0),
-        options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.uintValue),
-        animations: { [weak self] in
-          self?.animateKeyboard?(correctedHeight)
-        },
-        completion: nil
-      )
+        /// Function that will be called before the keyboard is shown and before animation is started.
+        public var willAnimateKeyboard: AnimationCallback?
         
-      currentKeyboardHeight = correctedHeight
+        /// Function that will be called inside the animation block. This can be used to call `layoutIfNeeded` on the view.
+        public var animateKeyboard: AnimationCallback?
+        
+        /// Current height of the keyboard. Has value `nil` if unknown.
+        public var currentKeyboardHeight: CGFloat?
+        
+        /// Creates an instance of the class
+        public override init() {
+            notificationCenter = NotificationCenter.default
+            super.init()
+        }
+        
+        deinit {
+            stop()
+        }
+        
+        /// Start listening for keyboard notifications.
+        public func start() {
+            stop()
+            
+            notificationCenter.addObserver(self, selector: #selector(UnderKeyboard.Observer.keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+            notificationCenter.addObserver(self, selector: #selector(UnderKeyboard.Observer.keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        }
+        
+        /// Stop listening for keyboard notifications.
+        public func stop() {
+            notificationCenter.removeObserver(self)
+        }
+        
+        // MARK: - Notification
+        
+        func keyboardNotification(_ notification: Notification) {
+            let isShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
+            
+            if let userInfo = (notification as NSNotification).userInfo,
+                let height = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
+                let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue,
+                let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
+                
+                let correctedHeight = isShowing ? height : 0
+                willAnimateKeyboard?(correctedHeight)
+                
+                UIView.animate(withDuration: duration,
+                               delay: TimeInterval(0),
+                               options: UIViewAnimationOptions(rawValue: animationCurveRawNSN.uintValue),
+                               animations: { [weak self] in
+                                self?.animateKeyboard?(correctedHeight)
+                    },
+                               completion: nil
+                )
+                
+                currentKeyboardHeight = correctedHeight
+            }
+        }
     }
-  }
 }
 
 
