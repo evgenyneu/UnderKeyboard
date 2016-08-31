@@ -24,13 +24,29 @@ extension UnderKeyboard.DefaultObserver: KeyboardNotificiationListener {
         // or maybe do the side effecty things here for now?
         switch notification.name {
         case .beganEditing:
-            break
+            let keyboardWillCoverField = false
+            guard keyboardWillCoverField else {
+                return
+            }
+            
+            let minDistanceToMoveScreenUpAsToNotHaveTheFieldCovered: CGFloat = 0
+            animateScreen(delta: minDistanceToMoveScreenUpAsToNotHaveTheFieldCovered, duration: 1)
         case .changed:
             break
         case .endedEditing:
-            break
+            resetScreenDelta(duration: 1)
         }
         
     }
     
+}
+
+extension UnderKeyboard.DefaultObserver {
+    func animateScreen(delta: CGFloat, duration: TimeInterval, completion: () -> () = {}) {
+        
+    }
+    
+    func resetScreenDelta(duration: TimeInterval, completion: () -> () = {}) {
+        
+    }
 }
