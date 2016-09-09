@@ -31,7 +31,8 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'UnderKeyboard', git: 'https://github.com/marketplacer/UnderKeyboard.git', tag: '8.0.0'
+    pod 'UnderKeyboard', '~> 8.0'
+
 
 
 #### Legacy Swift versions
