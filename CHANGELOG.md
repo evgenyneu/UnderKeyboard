@@ -1,5 +1,9 @@
 # UnderKeyboard version history
 
+## 8.0.2 (2016-10-18)
+
+Add Carthage diretory to .gitignore [AndrewSB](https://github.com/AndrewSB).
+
 ## 8.0.0 (2016-08-27)
 
 Updated to Xcode 8 beta 6 version of Swift.
