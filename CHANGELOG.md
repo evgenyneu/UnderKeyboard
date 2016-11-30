@@ -1,5 +1,9 @@
 # UnderKeyboard version history
 
+## 8.0.3 (2016-11-30)
+
+Fix [a crash](https://github.com/marketplacer/UnderKeyboard/issues/7) which happens when the view is not added.
+
 ## 8.0.2 (2016-10-18)
 
 Add Carthage directory to .gitignore ([AndrewSB](https://github.com/AndrewSB)).
