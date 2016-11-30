@@ -104,7 +104,12 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   }
   
   func animateKeyboard(_ height: CGFloat) {
-    viewToAnimate?.layoutIfNeeded()
+    guard let viewToAnimate = viewToAnimate else { return }
+    
+    // Check if view is shown, otherwise layoutIfNeeded() will crash
+    if viewToAnimate.window != nil {
+      viewToAnimate.layoutIfNeeded()
+    }
   }
 }
 
