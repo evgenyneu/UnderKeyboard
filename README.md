@@ -1,11 +1,9 @@
 # An iOS / Swift libary for moving content from under the keyboard
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][carthage]
-[![CocoaPods Version](https://img.shields.io/cocoapods/v/UnderKeyboard.svg?style=flat)][cocoadocs]
-[![License](https://img.shields.io/cocoapods/l/UnderKeyboard.svg?style=flat)][cocoadocs]
-[![Platform](https://img.shields.io/cocoapods/p/UnderKeyboard.svg?style=flat)][cocoadocs]
-[cocoadocs]: http://cocoadocs.org/docsets/UnderKeyboard
-[carthage]: https://github.com/Carthage/Carthage
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Version](https://img.shields.io/cocoapods/v/UnderKeyboard.svg?style=flat)](http://cocoadocs.org/docsets/UnderKeyboard)
+[![License](https://img.shields.io/cocoapods/l/UnderKeyboard.svg?style=flat)](http://cocoadocs.org/docsets/UnderKeyboard)
+[![Platform](https://img.shields.io/cocoapods/p/UnderKeyboard.svg?style=flat)](http://cocoadocs.org/docsets/UnderKeyboard)
 
 This library helps moving your views when a keyboard appears and move them back in place when it hides.
 It includes helper class for changing the length of a bottom Auto Layout constraint.
