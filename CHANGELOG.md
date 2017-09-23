@@ -1,5 +1,9 @@
 # UnderKeyboard version history
 
+## 9.0.0 (2017-09-23)
+
+Updated to Swift 4.0.
+
 ## 8.0.3 (2016-11-30)
 
 Fix [a crash](https://github.com/marketplacer/UnderKeyboard/issues/7) which happens when the view is not added.
