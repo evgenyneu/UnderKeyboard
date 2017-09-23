@@ -44,7 +44,7 @@ public final class UnderKeyboardObserver: NSObject {
   
   // MARK: - Notification
   
-  func keyboardNotification(_ notification: Notification) {
+  @objc func keyboardNotification(_ notification: Notification) {
     let isShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
     
     if let userInfo = (notification as NSNotification).userInfo,
