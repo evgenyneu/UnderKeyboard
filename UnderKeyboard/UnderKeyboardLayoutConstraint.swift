@@ -19,8 +19,13 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   public override init() {
     super.init()
     
-    keyboardObserver.willAnimateKeyboard = keyboardWillAnimate
-    keyboardObserver.animateKeyboard = animateKeyboard
+    keyboardObserver.willAnimateKeyboard = { [weak self] height in
+        self?.keyboardWillAnimate(height)
+    }
+    keyboardObserver.animateKeyboard = { [weak self] height in
+        self?.animateKeyboard(height)
+    }
+    
     keyboardObserver.start()
   }
   
