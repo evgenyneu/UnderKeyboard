@@ -1,5 +1,11 @@
 # UnderKeyboard version history
 
+
+## 10.0.0 (2017-09-27)
+
+Memory leak [fix](https://github.com/evgenyneu/UnderKeyboard/pull/11).
+
+
 ## 9.0.0 (2017-09-23)
 
 Updated to Swift 4.0.
