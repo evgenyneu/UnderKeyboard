@@ -21,7 +21,7 @@ Simply add [UnderKeyboardDistrib.swift](https://github.com/evgenyneu/UnderKeyboa
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "evgenyneu/UnderKeyboard" ~> 10.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "evgenyneu/UnderKeyboard" ~> 11.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -29,7 +29,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'UnderKeyboard', '~> 10.0'
+    pod 'UnderKeyboard', '~> 11.0'
 
 
 
@@ -54,12 +54,13 @@ let underKeyboardLayoutConstraint = UnderKeyboardLayoutConstraint()
 override func viewDidLoad() {
   super.viewDidLoad()
 
-  underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view,
-    bottomLayoutGuide: bottomLayoutGuide)
+  underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view)
 }
 ```
 
 <img src='https://raw.githubusercontent.com/evgenyneu/UnderKeyboard/master/Graphics/bottom_constraint.png' alt='Increase height of bottom layout constraint when keyboard appears in iOS' width='601'>
+
+Note: the bottom edge of the `bottomLayoutConstraint` should be connected to the superview and not to layout guide or safe area.
 
 
 
@@ -103,6 +104,11 @@ func myFunction() {
   print("Keyboard height: \(keyboardObserver.currentKeyboardHeight)")
 }
 ```
+
+
+## API change in version 11
+
+The `bottomLayoutGuide` attribute for `setup` method of the `UnderKeyboardLayoutConstraint` class was removed in version 11. In order to calculate the height of the bottom constaint correctly, its bottom edge should now be connected to the superview and not to layout guide or safe area. The superview should be the one which  the view that matches the size of the app window.
 
 
 ## Reference

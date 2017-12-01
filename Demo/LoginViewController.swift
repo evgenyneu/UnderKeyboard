@@ -8,8 +8,7 @@ class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view,
-      bottomLayoutGuide: bottomLayoutGuide)
+    underKeyboardLayoutConstraint.setup(bottomLayoutConstraint, view: view)
   }
   
   @IBAction func didTapCloseKeyboard(_ sender: AnyObject) {

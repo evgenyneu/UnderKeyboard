@@ -10,8 +10,7 @@ class ScrollViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    underKeyboardLayoutConstraint.setup(bottomConstraint, view: view,
-      bottomLayoutGuide: bottomLayoutGuide)
+    underKeyboardLayoutConstraint.setup(bottomConstraint, view: view)
   }
   
   @IBAction func didTapCloseJKeyboard(_ sender: AnyObject) {

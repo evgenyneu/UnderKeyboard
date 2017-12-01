@@ -23,7 +23,6 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
 */
 @objc public class UnderKeyboardLayoutConstraint: NSObject {
   private weak var bottomLayoutConstraint: NSLayoutConstraint?
-  private weak var bottomLayoutGuide: UILayoutSupport?
   private var keyboardObserver = UnderKeyboardObserver()
   private var initialConstraintConstant: CGFloat = 0
   private var minMargin: CGFloat = 10
@@ -63,17 +62,13 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   
   - parameter minMargin: Specify the minimum margin between the keyboard and the bottom of the view the constraint is attached to. Default: 10.
   
-  - parameter bottomLayoutGuide: Supply an optional bottom layout guide (like a tab bar) that will be taken into account during height calculations.
-  
   */
   public func setup(_ bottomLayoutConstraint: NSLayoutConstraint,
-    view: UIView, minMargin: CGFloat = 10,
-    bottomLayoutGuide: UILayoutSupport? = nil) {
+    view: UIView, minMargin: CGFloat = 10) {
       
     initialConstraintConstant = bottomLayoutConstraint.constant
     self.bottomLayoutConstraint = bottomLayoutConstraint
     self.minMargin = minMargin
-    self.bottomLayoutGuide = bottomLayoutGuide
     self.viewToAnimate = view
       
     // Keyboard is already open when setup is called
@@ -87,11 +82,8 @@ Adjusts the length (constant value) of the bottom layout constraint when keyboar
   func keyboardWillAnimate(_ height: CGFloat) {
     guard let bottomLayoutConstraint = bottomLayoutConstraint else { return }
     
-    let layoutGuideHeight = bottomLayoutGuide?.length ?? 0
-    let correctedHeight = height - layoutGuideHeight
-    
     if height > 0 {
-      let newConstantValue = correctedHeight + minMargin
+      let newConstantValue = height + minMargin
       
       if newConstantValue > initialConstraintConstant {
         // Keyboard height is bigger than the initial constraint length.

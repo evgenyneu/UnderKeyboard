@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EdU-AM-PH0">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EdU-AM-PH0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,27 +15,27 @@
         <scene sceneID="4kL-5X-ArH">
             <objects>
                 <viewController id="JGb-BS-J7U" customClass="LoginViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ka5-n1-kJV"/>
-                        <viewControllerLayoutGuide type="bottom" id="fIq-we-Lp6"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xfb-B9-0xB">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-iG-88K">
+                                <rect key="frame" x="16" y="312.5" width="343" height="78"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWA-pq-yp5" customClass="TouchableTextField" customModule="Demo" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="13" width="313" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Br-Z5-0rK">
+                                        <rect key="frame" x="0.0" y="40" width="343" height="1"/>
                                         <color key="backgroundColor" red="0.14800996129999999" green="0.02484939982" blue="0.16299715910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="1ER-7o-YB9"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MX-cv-ejY" customClass="TouchableTextField" customModule="Demo" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="51" width="313" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -51,6 +55,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-Mg-4L5">
+                                <rect key="frame" x="16" y="400.5" width="343" height="44"/>
                                 <color key="backgroundColor" red="0.73938604797979801" green="0.32189971839302273" blue="0.25309860481230673" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
                                 <state key="normal" title="Login">
@@ -61,6 +66,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acK-ng-2sw">
+                                <rect key="frame" x="141" y="179.5" width="93" height="103"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="86"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -73,11 +79,12 @@
                             <constraint firstItem="wRB-iG-88K" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="F4o-su-aJ7"/>
                             <constraint firstItem="JOB-Mg-4L5" firstAttribute="top" secondItem="wRB-iG-88K" secondAttribute="bottom" constant="10" id="Hbx-9V-Y34"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wRB-iG-88K" secondAttribute="trailing" id="NiZ-5c-ffT"/>
-                            <constraint firstItem="acK-ng-2sw" firstAttribute="centerX" secondItem="Xfb-B9-0xB" secondAttribute="centerX" id="PmQ-1D-APP"/>
+                            <constraint firstItem="acK-ng-2sw" firstAttribute="centerX" secondItem="pao-OC-fKs" secondAttribute="centerX" id="PmQ-1D-APP"/>
                             <constraint firstItem="wRB-iG-88K" firstAttribute="centerY" secondItem="Xfb-B9-0xB" secondAttribute="centerY" priority="750" constant="50" id="dF2-Hk-fKg"/>
-                            <constraint firstItem="fIq-we-Lp6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JOB-Mg-4L5" secondAttribute="bottom" constant="50" id="ohi-W5-W8O"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JOB-Mg-4L5" secondAttribute="bottom" constant="50" id="ohi-W5-W8O"/>
                             <constraint firstItem="JOB-Mg-4L5" firstAttribute="leading" secondItem="Xfb-B9-0xB" secondAttribute="leadingMargin" id="tIc-qd-L6O"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="pao-OC-fKs"/>
                     </view>
                     <navigationItem key="navigationItem" id="HLc-WH-sGb">
                         <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="pAe-Im-bjS">
@@ -118,15 +125,12 @@
         <scene sceneID="3QI-3H-Od9">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="bMX-L3-lVV" customClass="ScrollViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ieS-bT-r2h"/>
-                        <viewControllerLayoutGuide type="bottom" id="7TR-sD-YER"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fOe-If-0Hk">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="sts-RH-0Em">
+                                <rect key="frame" x="16" y="15" width="343" height="529"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.
 
@@ -146,9 +150,10 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sts-RH-0Em" secondAttribute="trailing" id="225-4o-Cf1"/>
                             <constraint firstItem="sts-RH-0Em" firstAttribute="leading" secondItem="fOe-If-0Hk" secondAttribute="leadingMargin" id="2Sd-IJ-ORn"/>
-                            <constraint firstItem="7TR-sD-YER" firstAttribute="top" secondItem="sts-RH-0Em" secondAttribute="bottom" constant="10" id="BqS-8d-Ljz"/>
-                            <constraint firstItem="sts-RH-0Em" firstAttribute="top" secondItem="ieS-bT-r2h" secondAttribute="bottom" constant="15" id="Uoy-YY-dh0"/>
+                            <constraint firstAttribute="bottom" secondItem="sts-RH-0Em" secondAttribute="bottom" constant="59" id="BqS-8d-Ljz"/>
+                            <constraint firstItem="sts-RH-0Em" firstAttribute="top" secondItem="YDu-mw-iw3" secondAttribute="top" constant="15" id="Uoy-YY-dh0"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="YDu-mw-iw3"/>
                     </view>
                     <navigationItem key="navigationItem" id="xgf-2r-tZM">
                         <barButtonItem key="rightBarButtonItem" title="Close keyboard" id="6ey-3x-ROS">
@@ -174,7 +179,6 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                     <tabBarItem key="tabBarItem" title="Login" image="Login" id="sCr-9r-JGz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bEw-dY-v11">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -194,7 +198,6 @@ Native Americans have lived in the Yellowstone region for at least 11,000 years.
                     <tabBarItem key="tabBarItem" title="Read" image="Read" id="VoW-XA-e4A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Z7C-ON-NCH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>

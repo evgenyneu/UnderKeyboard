@@ -1,6 +1,11 @@
 # UnderKeyboard version history
 
 
+## 11.0.0 (2017-12-02)
+
+Remove layout guides.
+
+
 ## 10.0.0 (2017-09-27)
 
 Memory leak [fix](https://github.com/evgenyneu/UnderKeyboard/pull/11).
