@@ -108,7 +108,7 @@ func myFunction() {
 
 ## API change in version 11
 
-The `bottomLayoutGuide` attribute for `setup` method of the `UnderKeyboardLayoutConstraint` class was removed in version 11. In order to calculate the height of the bottom constaint correctly, its bottom edge should now be connected to the superview and not to layout guide or safe area. The superview should be the one which  the view that matches the size of the app window.
+The `bottomLayoutGuide` attribute for `setup` method of the `UnderKeyboardLayoutConstraint` class was removed in version 11. In order to calculate the height of the bottom constaint correctly, its bottom edge should now be connected to the superview and not to layout guide or safe area. The superview should be the one that matches the size of the app window.
 
 
 ## Reference
