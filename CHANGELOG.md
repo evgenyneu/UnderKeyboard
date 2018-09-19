@@ -1,6 +1,11 @@
 # UnderKeyboard version history
 
 
+## 12.0.0 (2018-09-19)
+
+Updated to Swift 4.2.
+
+
 ## 11.0.0 (2017-12-02)
 
 Remove layout guides.
