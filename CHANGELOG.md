@@ -1,5 +1,9 @@
 # UnderKeyboard version history
 
+## 13.0.0 (2019-04-20)
+
+Updated to Swift 5.0.
+
 
 ## 12.0.0 (2018-09-19)
 
