@@ -31,7 +31,18 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
     target 'Your target name'
     pod 'UnderKeyboard', '~> 13.0'
 
+#### Setup with Swift Package manager
 
+You can use [The Swift Package Manager](https://swift.org/package-manager/) to install `UnderKeyboard` by adding the proper description to your Package.swift file:
+
+   	// swift-tools-version:5.0
+   	import PackageDescription
+	let package = Package(
+    	name: "YOUR_PROJECT_NAME",
+    	dependencies: [
+        	.package(url: "https://github.com/evgenyneu/UnderKeyboard.git", from: "13.0"),
+    	]
+	)
 
 
 #### Legacy Swift versions
